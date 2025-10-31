@@ -1,5 +1,4 @@
 
-```markdown
 # 🧱 OrgPath Backend
 
 OrgPath is an AI-driven **succession and organizational effectiveness** platform.  
@@ -8,8 +7,6 @@ This backend powers authentication, assessment data collection, and analytics AP
 ---
 
 ## 🌐 Architecture Overview
-
-```
 
 Browser (Frontend)
 │
