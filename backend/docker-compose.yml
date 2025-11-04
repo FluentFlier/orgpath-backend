@@ -1,0 +1,27 @@
+services:
+  api:
+    build: .
+    container_name: orgpath-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - NODE_ENV=development
+
+  db:
+    image: postgres:15
+    container_name: orgpath-db
+    restart: always
+    environment:
+      POSTGRES_USER: orgpath
+      POSTGRES_PASSWORD: orgpath
+      POSTGRES_DB: orgpath
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata:
