@@ -1,0 +1,129 @@
+/*<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Dashboard • OrgInsights</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<script src="js/dashboard.js"></script>
+
+<body>
+
+  <!-- Top Bar -->
+  <header class="dash-topbar">
+    <img src="assets/Orginsights-Logo.png" class="dash-logo" alt="OrgInsights Logo" />
+    <button id="btn-logout" class="btn-logout">
+      LOGOUT
+      <svg width="18" height="18" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5v10zM4 4h2v16H4z"/></svg>
+    </button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="dash-hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Welcome <span id="emp-name">User</span>,</h1>
+
+      <p class="hero-sub"><strong>You are about to embark on a journey of self-discovery.</strong></p>
+      <p class="hero-copy">The OrgInsights Dashboard is where you can create new sessions, continue your assessments, and view reports.</p>
+
+      <div class="referral-pill">
+        <span class="pill-label">Referral Code</span>
+        <span id="emp-referral" class="pill-value"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="dash-content">
+        <h2 class="section-title">In progress</h2>
+
+    <!-- ✅ Big green rectangle wrapper -->
+    <div class="inprogress-box">
+      <div class="session-grid">
+        <!-- new tiles are inserted here -->
+        <div id="in-progress-container"></div>
+
+        <!-- Create tile starts alone under the heading; moves right as new tiles are added -->
+        <button class="card-new" id="btn-new-session">
+          <div class="card-title">Create New Session</div>
+          <div class="card-circle"><span class="plus">+</span></div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Modal -->
+  <div id="pricing-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-close="pricing-modal"></div>
+
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Choose Assessment">
+      <button class="modal-close" aria-label="Close" data-close="pricing-modal">×</button>
+
+      <div class="pricing-grid">
+        <!-- LEFT: OrgInsights (blue) -->
+        <article class="price-card price-card--blue">
+          <h3 class="pc-title">ORGINSIGHTS<br>ASSESSMENT</h3>
+
+          <div class="pc-price">
+            <span class="pc-usd">USD</span>
+            <span class="pc-now-num">49</span>
+          </div>
+
+          <ul class="pc-features">
+            <li>SELF ASSESSMENT</li>
+            <li>ORGINSIGHTS ASSESSMENT</li>
+            <li>ORGINSIGHTS REPORT</li>
+            <li>ADDITIONAL INSIGHTS REPORT</li>
+          </ul>
+
+          <button class="pc-cta" data-plan="org">PAY NOW</button>
+        </article>
+
+        <!-- MIDDLE: 360 (white) -->
+        <article class="price-card">
+          <h3 class="pc-title">360 ASSESSMENT</h3>
+
+          <div class="pc-price">
+            <span class="pc-usd">USD</span>
+            <span class="pc-now-num">49</span>
+          </div>
+
+          <ul class="pc-features">
+            <li>SELF ASSESSMENT</li>
+            <li>360 ASSESSMENT</li>
+            <li>360 INSIGHTS REPORT</li>
+          </ul>
+
+          <button class="pc-cta" data-plan="360">PAY NOW</button>
+        </article>
+
+        <!-- RIGHT: Combo (white) -->
+        <article class="price-card">
+          <h3 class="pc-title">ORGINSIGHTS AND<br>360 ASSESSMENT</h3>
+
+          <div class="pc-price">
+            <span class="pc-usd">USD</span>
+            <span class="pc-now-num">99</span>
+          </div>
+
+          <ul class="pc-features">
+            <li>SELF ASSESSMENT</li>
+            <li>ORGINSIGHTS ASSESSMENT</li>
+            <li>360 ASSESSMENT</li>
+            <li>ORGINSIGHTS REPORT</li>
+            <li>ADDITIONAL INSIGHTS REPORT</li>
+            <li>360 INSIGHTS REPORT</li>
+          </ul>
+
+          <button class="pc-cta" data-plan="combo">PAY NOW</button>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
+
