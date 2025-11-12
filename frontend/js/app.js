@@ -33,14 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
   fakeCaptcha?.addEventListener('change', updateCreateEnabled);
 
   
-  // --- START: MODIFIED REGISTER LOGIC ---
+  // --- REGISTER LOGIC (No changes) ---
   const createForm = document.getElementById('create-form');
   
   if (createForm) {
     createForm.addEventListener('submit', async (e) => {
-      e.preventDefault(); // Stop default form submission
-
-      // 1. Check Captcha
+      e.preventDefault(); 
       if (!fakeCaptcha?.checked) {
         if (captchaError) {
           captchaError.classList.add('show');
@@ -50,22 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return;
       }
-
-      // 2. Get form data
       const formData = new FormData(createForm);
       const firstName = formData.get('name');
-      // We will add name="lastName" to the HTML
       const lastName = formData.get('lastName'); 
       const email = formData.get('email');
       const password = formData.get('password');
       const referralCode = formData.get('referral');
 
-      // 3. Disable button, show loading
       createBtn.disabled = true;
       createBtn.textContent = "Creating Account...";
 
       try {
-        // 4. Make REAL API call
         const res = await fetch(`${API_BASE}/auth/register`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -79,74 +72,104 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "Failed to create account");
 
-        if (!res.ok) {
-          // Show error from backend (e.g., "User already exists")
-          throw new Error(data.error || "Failed to create account");
-        }
-
-        // 5. SUCCESS! Save token and user, then redirect
         sessionStorage.setItem("orgpath_token", data.token);
         sessionStorage.setItem("orgpath_user", JSON.stringify(data.user));
 
-        // Redirect based on role
         if (data.user.role === 'employee') {
           window.location.href = 'employee-dashboard.html';
         } else {
-          // Handle lead/company roles later
           window.location.href = 'employee-dashboard.html';
         }
         
       } catch (err) {
         alert(`Registration Error: ${err.message}`);
-        // Re-enable button on failure
         createBtn.disabled = false;
         createBtn.textContent = "Create Account";
       }
     });
   }
-  // --- END: MODIFIED REGISTER LOGIC ---
 
 
-  // --- START: LOGIN LOGIC (Not implemented, but listener is here) ---
+  // --- START: MODIFIED LOGIN LOGIC ---
   const loginForm = document.getElementById('login-form');
+  const loginBtn = loginForm?.querySelector('button[type="submit"]');
+
   if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      // TODO: Implement login fetch call to POST /api/auth/login
-      // 1. Get identifier (username/email) and password from form
-      // 2. Fetch POST /api/auth/login
-      // 3. On success, save token/user to sessionStorage
-      // 4. Redirect to dashboard
-      alert("Login is not implemented yet. Please use 'Create Account'.");
+
+      // 1. Get form data
+      const formData = new FormData(loginForm);
+      const identifier = formData.get('identifier'); // This is 'Username or Email'
+      const password = formData.get('password');
+
+      if (!identifier || !password) {
+        alert("Please enter your email/username and password.");
+        return;
+      }
+
+      // 2. Disable button, show loading
+      if(loginBtn) loginBtn.disabled = true;
+      if(loginBtn) loginBtn.textContent = "Logging in...";
+
+      try {
+        // 3. Make REAL API call to the login endpoint
+        const res = await fetch(`${API_BASE}/auth/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ identifier, password }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          // Show error from backend (e.g., "Invalid credentials")
+          throw new Error(data.error || "Failed to log in");
+        }
+
+        // 4. SUCCESS! Save token and user
+        sessionStorage.setItem("orgpath_token", data.token);
+        sessionStorage.setItem("orgpath_user", JSON.stringify(data.user));
+
+        // 5. Redirect to dashboard
+        if (data.user.role === 'employee') {
+          window.location.href = 'employee-dashboard.html';
+        } else {
+          // Handle other roles later
+          window.location.href = 'employee-dashboard.html';
+        }
+
+      } catch (err) {
+        alert(`Login Error: ${err.message}`);
+        if(loginBtn) loginBtn.disabled = false;
+        if(loginBtn) loginBtn.textContent = "Login";
+      }
     });
   }
-
+  // --- END: MODIFIED LOGIN LOGIC ---
 });
 
 
-// ========== EMPLOYEE DASHBOARD ==========
-// This logic is now in frontend/js/dashboard.js, but we'll update
-// this one to use the new keys just in case.
+// ========== EMPLOYEE DASHBOARD (No changes) ==========
+// This logic is in frontend/js/dashboard.js, but we'll leave this
+// simple version in app.js for any dashboards that haven't been split.
 if (location.pathname.endsWith('employee-dashboard.html')) {
   
-  // Use the NEW session keys
   const token = sessionStorage.getItem('orgpath_token');
   const user = JSON.parse(sessionStorage.getItem('orgpath_user') || 'null');
 
-  // Redirect if not logged in
   if (!token || !user || user.role !== 'employee') {
-    sessionStorage.clear(); // Clear bad data
+    sessionStorage.clear();
     location.href = 'index.html';
   } else {
-    // Populate from the REAL user object
     const nameEl = document.getElementById('emp-name');
     const refEl  = document.getElementById('emp-referral');
     if (nameEl) nameEl.textContent = user.first_name;
     if (refEl)  refEl.textContent  = user.referral_code;
   }
 
-  // Logout
   document.getElementById('btn-logout')?.addEventListener('click', () => {
     sessionStorage.clear();
     location.href = 'index.html';
@@ -155,41 +178,26 @@ if (location.pathname.endsWith('employee-dashboard.html')) {
   // ===== PRICING MODAL (No changes) =====
   const modal   = document.getElementById('pricing-modal');
   const openBtn = document.getElementById('btn-new-session');
-
-  function openModal(){ modal?.classList.remove('hidden'); modal?.setAttribute('aria-hidden','false'); }
-  function closeModal(){ modal?.classList.add('hidden'); modal?.setAttribute('aria-hidden','true'); }
-
+  function openModal(){ modal?.classList.remove('hidden'); }
+  function closeModal(){ modal?.classList.add('hidden'); }
   openBtn?.addEventListener('click', openModal);
-
-  // close on [×] or backdrop
   modal?.addEventListener('click', (e) => {
-    const target = e.target;
-    if (!(target instanceof Element)) return;
-    if (target.matches('[data-close="pricing-modal"], .modal-backdrop')) {
+    if (e.target.matches('[data-close="pricing-modal"], .modal-backdrop')) {
       closeModal();
     }
   });
-
-  // close on Escape
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
+  
   // ===== NEW SESSION TILE (No changes) =====
-  const planLabel = {
-    org:   'OrgInsights Assessment',
-    '360': '360 Assessment',
-    combo: 'OrgInsights + 360'
-  };
-
+  const planLabel = { org: 'OrgInsights Assessment', '360': '360 Assessment', combo: 'OrgInsights + 360' };
   function addSessionTile(label, planKey) {
     const grid = document.querySelector('.session-grid');
     const createTile = document.getElementById('btn-new-session');
     if (!grid || !createTile) return;
-  
     const tile = createTile.cloneNode(false);
     tile.id = '';
     tile.classList.add('card-session');
     tile.type = 'button';
-  
     tile.innerHTML = `
       <div class="card-session-inner">
         <div class="card-title">${label}</div>
@@ -198,28 +206,20 @@ if (location.pathname.endsWith('employee-dashboard.html')) {
         </div>
       </div>
     `;
-  
     grid.insertBefore(tile, createTile);
   }
-  
-  // handle clicks on any PAY NOW in the modal
   modal?.addEventListener('click', (e) => {
     const btn = e.target.closest('.pc-cta');
     if (!btn) return;
-  
     const plan = btn.dataset.plan;
     const label = planLabel[plan];
     if (!label) return;
-  
     addSessionTile(label, plan);
     closeModal();
   });
-  
-  // (optional) hook for the "start" button
   document.querySelector('.session-grid')?.addEventListener('click', (e) => {
     const startBtn = e.target.closest('.btn-start');
     if (!startBtn) return;
-  
     const plan = startBtn.dataset.start;
     console.log('Start clicked for plan:', plan);
   });
