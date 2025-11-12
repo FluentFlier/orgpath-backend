@@ -1,9 +1,8 @@
-
-
 // ========== LOGIN / REGISTER PAGE ==========
 document.addEventListener('DOMContentLoaded', () => {
   const API_BASE = "http://localhost:8080/api";
-  // one and only one of each panel
+
+  // --- Panel/Tab switching (no changes) ---
   const panels = {
     login: document.getElementById('panel-login'),
     create: document.getElementById('panel-create'),
@@ -16,53 +15,33 @@ document.addEventListener('DOMContentLoaded', () => {
     Object.entries(panels).forEach(([k, el]) => el.classList.toggle('hidden', k !== mode));
     titleEl.textContent = (mode === 'login') ? 'Login' : 'Register';
   }
-
   tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.tab)));
-
   const hash = (location.hash || '').toLowerCase();
   show(hash.includes('create') ? 'create' : 'login');
 
-  // ===== reCAPTCHA =====
-  const fakeCaptcha  = document.getElementById('fake-captcha');
-  const createBtn    = document.querySelector('#panel-create .btn.btn-green');
+  // --- reCAPTCHA (no changes) ---
+  const fakeCaptcha = document.getElementById('fake-captcha');
+  const createBtn = document.querySelector('#panel-create .btn.btn-green');
   const captchaError = document.getElementById('captcha-error');
-
   function updateCreateEnabled() {
     if (!createBtn) return;
     const ok = !!fakeCaptcha?.checked;
     createBtn.disabled = !ok;
     if (captchaError) captchaError.classList.toggle('show', !ok);
   }
-
   updateCreateEnabled();
   fakeCaptcha?.addEventListener('change', updateCreateEnabled);
 
-  // ===== REGISTER ROUTING =====
-  const createForm =
-    document.getElementById('create-form') ||
-    document.querySelector('#panel-create form');
+  
+  // --- START: MODIFIED REGISTER LOGIC ---
+  const createForm = document.getElementById('create-form');
+  
+  if (createForm) {
+    createForm.addEventListener('submit', async (e) => {
+      e.preventDefault(); // Stop default form submission
 
-  const nameInput =
-    document.getElementById('name') ||
-    document.querySelector('#panel-create input[name="name"]');
-
-  const referralInput =
-    document.getElementById('referral-code') ||
-    document.querySelector('#panel-create input[name="referral"]');
-
-  function roleFromReferral(code) {
-    if (!code) return null;
-    const ch = String(code).trim().charAt(0).toUpperCase();
-    if (ch === 'A') return 'employee';
-    if (ch === 'B') return 'lead';
-    if (ch === 'C') return 'company';
-    return null;
-  }
-
-  if (createForm && referralInput) {
-    createForm.addEventListener('submit', (e) => {
+      // 1. Check Captcha
       if (!fakeCaptcha?.checked) {
-        e.preventDefault();
         if (captchaError) {
           captchaError.classList.add('show');
           captchaError.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -72,46 +51,99 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      e.preventDefault();
+      // 2. Get form data
+      const formData = new FormData(createForm);
+      const firstName = formData.get('name');
+      // We will add name="lastName" to the HTML
+      const lastName = formData.get('lastName'); 
+      const email = formData.get('email');
+      const password = formData.get('password');
+      const referralCode = formData.get('referral');
 
-      const name = (nameInput?.value || 'User').trim();
-      const referral = (referralInput.value || '').trim();
-      const role = roleFromReferral(referral);
+      // 3. Disable button, show loading
+      createBtn.disabled = true;
+      createBtn.textContent = "Creating Account...";
 
-      if (!role) {
-        alert('Referral should start with A / B / C');
-        return;
-      }
+      try {
+        // 4. Make REAL API call
+        const res = await fetch(`${API_BASE}/auth/register`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            email,
+            password,
+            referralCode
+          }),
+        });
 
-      sessionStorage.setItem(
-        'orgi_session',
-        JSON.stringify({ name, referral, role })
-      );
+        const data = await res.json();
 
-      if (role === 'employee') {
-        window.location.href = 'employee-dashboard.html';
-      } else if (role === 'lead') {
-        window.location.href = 'teamlead-dashboard.html';
-      } else {
-        window.location.href = 'company-dashboard.html';
+        if (!res.ok) {
+          // Show error from backend (e.g., "User already exists")
+          throw new Error(data.error || "Failed to create account");
+        }
+
+        // 5. SUCCESS! Save token and user, then redirect
+        sessionStorage.setItem("orgpath_token", data.token);
+        sessionStorage.setItem("orgpath_user", JSON.stringify(data.user));
+
+        // Redirect based on role
+        if (data.user.role === 'employee') {
+          window.location.href = 'employee-dashboard.html';
+        } else {
+          // Handle lead/company roles later
+          window.location.href = 'employee-dashboard.html';
+        }
+        
+      } catch (err) {
+        alert(`Registration Error: ${err.message}`);
+        // Re-enable button on failure
+        createBtn.disabled = false;
+        createBtn.textContent = "Create Account";
       }
     });
   }
+  // --- END: MODIFIED REGISTER LOGIC ---
+
+
+  // --- START: LOGIN LOGIC (Not implemented, but listener is here) ---
+  const loginForm = document.getElementById('login-form');
+  if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      // TODO: Implement login fetch call to POST /api/auth/login
+      // 1. Get identifier (username/email) and password from form
+      // 2. Fetch POST /api/auth/login
+      // 3. On success, save token/user to sessionStorage
+      // 4. Redirect to dashboard
+      alert("Login is not implemented yet. Please use 'Create Account'.");
+    });
+  }
+
 });
 
 
-
 // ========== EMPLOYEE DASHBOARD ==========
+// This logic is now in frontend/js/dashboard.js, but we'll update
+// this one to use the new keys just in case.
 if (location.pathname.endsWith('employee-dashboard.html')) {
-  const data = JSON.parse(sessionStorage.getItem('orgi_session') || 'null');
+  
+  // Use the NEW session keys
+  const token = sessionStorage.getItem('orgpath_token');
+  const user = JSON.parse(sessionStorage.getItem('orgpath_user') || 'null');
 
-  if (!data || data.role !== 'employee') {
+  // Redirect if not logged in
+  if (!token || !user || user.role !== 'employee') {
+    sessionStorage.clear(); // Clear bad data
     location.href = 'index.html';
   } else {
+    // Populate from the REAL user object
     const nameEl = document.getElementById('emp-name');
     const refEl  = document.getElementById('emp-referral');
-    if (nameEl) nameEl.textContent = data.name;
-    if (refEl)  refEl.textContent  = data.referral;
+    if (nameEl) nameEl.textContent = user.first_name;
+    if (refEl)  refEl.textContent  = user.referral_code;
   }
 
   // Logout
@@ -120,7 +152,7 @@ if (location.pathname.endsWith('employee-dashboard.html')) {
     location.href = 'index.html';
   });
 
-  // ===== PRICING MODAL =====
+  // ===== PRICING MODAL (No changes) =====
   const modal   = document.getElementById('pricing-modal');
   const openBtn = document.getElementById('btn-new-session');
 
@@ -141,7 +173,7 @@ if (location.pathname.endsWith('employee-dashboard.html')) {
   // close on Escape
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-  // ===== NEW SESSION TILE (clone create tile; insert LEFT of it) =====
+  // ===== NEW SESSION TILE (No changes) =====
   const planLabel = {
     org:   'OrgInsights Assessment',
     '360': '360 Assessment',
@@ -153,23 +185,20 @@ if (location.pathname.endsWith('employee-dashboard.html')) {
     const createTile = document.getElementById('btn-new-session');
     if (!grid || !createTile) return;
   
-    // clone the create tile so size/spacing match perfectly
-    const tile = createTile.cloneNode(false); // shallow clone—we’ll set our own content
-    tile.id = '';                             // no duplicate id
-    tile.classList.add('card-session');       // styling hook
-    tile.type = 'button';                     // keep as button for identical look
+    const tile = createTile.cloneNode(false);
+    tile.id = '';
+    tile.classList.add('card-session');
+    tile.type = 'button';
   
-    // content: centered title + rounded "start" button at the bottom
     tile.innerHTML = `
       <div class="card-session-inner">
         <div class="card-title">${label}</div>
-        <div class="card-actions">
+        <div class.card-actions">
           <button class="btn-start" data-start="${planKey}">start</button>
         </div>
       </div>
     `;
   
-    // insert BEFORE the create tile → appears to the LEFT
     grid.insertBefore(tile, createTile);
   }
   
@@ -178,7 +207,7 @@ if (location.pathname.endsWith('employee-dashboard.html')) {
     const btn = e.target.closest('.pc-cta');
     if (!btn) return;
   
-    const plan = btn.dataset.plan;              // "org" | "360" | "combo"
+    const plan = btn.dataset.plan;
     const label = planLabel[plan];
     if (!label) return;
   
@@ -186,14 +215,12 @@ if (location.pathname.endsWith('employee-dashboard.html')) {
     closeModal();
   });
   
-  // (optional) hook for the "start" button – wire your real route later
+  // (optional) hook for the "start" button
   document.querySelector('.session-grid')?.addEventListener('click', (e) => {
     const startBtn = e.target.closest('.btn-start');
     if (!startBtn) return;
   
-    const plan = startBtn.dataset.start;        // "org" | "360" | "combo"
-    // TODO: replace with your real start route
-    // window.location.href = `assessment-${plan}.html`;
+    const plan = startBtn.dataset.start;
     console.log('Start clicked for plan:', plan);
   });
 }

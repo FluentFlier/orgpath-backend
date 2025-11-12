@@ -1,9 +1,13 @@
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
-  username TEXT UNIQUE NOT NULL,
-  email TEXT UNIQUE NOT NULL,
+  first_name    TEXT NOT NULL,
+  last_name     TEXT,
+  username      TEXT UNIQUE,
+  email         TEXT UNIQUE NOT NULL,
   password_hash TEXT NOT NULL,
-  created_at TIMESTAMPTZ DEFAULT NOW()
+  referral_code TEXT,
+  role          TEXT NOT NULL DEFAULT 'employee',
+  created_at    TIMESTAMPTZ DEFAULT NOW()
 );
 
 CREATE TABLE IF NOT EXISTS assessments (

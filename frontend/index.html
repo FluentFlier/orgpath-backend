@@ -10,12 +10,11 @@
 
 
 <body>
-  <!-- Brand row -->
   <div class="container brand-row">
-    <img class="brand-img" src="assets/orgpath-logo.png" alt="OrgPath — Building Innovative Pathways" />
+    <img class="brand-img" src="assets/orgpath-logo.png" alt="OrgPath — Building 
+[cite_start][cite: 167] Innovative Pathways" />
   </div>
 
-  <!-- Banner -->
   <div class="banner">
     <div class="container banner-inner">
       <h1 class="page-title" id="pageTitle">Login</h1>
@@ -23,26 +22,26 @@
   </div>
 
   <main class="container content">
-    <!-- Tabs -->
     <div class="tabs" role="tablist" aria-label="Authentication tabs">
       <button class="tab active" data-tab="login" role="tab" aria-selected="true">Login</button>
       <button class="tab" data-tab="create" role="tab" aria-selected="false">Create Account</button>
     </div>
 
-    <!-- LOGIN -->
     <section id="panel-login" aria-labelledby="pageTitle">
       <h2 class="welcome">Welcome back</h2>
-      <p class="sub">Enter your credentials to access your account</p>
+     
+[cite_start][cite: 168]  <p class="sub">Enter your credentials to access your account</p>
 
       <form id="login-form" class="form">
         <label class="field">
-          <span class="label">Username <span class="req">*</span></span>
-          <input type="text" class="input" placeholder="Enter your username" required />
+          <span class="label">Username or Email <span class="req">*</span></span>
+          <input type="text" class="input" placeholder="Enter your username or email" required name="identifier" />
         </label>
 
         <label class="field">
           <span class="label">Password <span class="req">*</span></span>
-          <input type="password" class="input" placeholder="Enter your password" required />
+          <input type="password" class="input" placeholder="Enter your 
+[cite_start][cite: 169] password" required name="password" />
         </label>
 
         <div class="form-row">
@@ -56,8 +55,8 @@
         </p>
       </form>
 
-      <!-- CTA under Login -->
-      <a class="orgpath-cta" href="https://orgpath.io" target="_blank" rel="noopener">
+    
+[cite_start][cite: 170]   <a class="orgpath-cta" href="https://orgpath.io" target="_blank" rel="noopener">
         <div class="cta-left">
           <img class="cta-logo" src="assets/orgpath-logo.png" alt="OrgPath logo" />
         </div>
@@ -65,38 +64,39 @@
           <div class="cta-top-row"><span class="cta-know">Learn more and Book Demo</span></div>
           <div class="cta-visit">Visit our website →</div>
         </div>
-      </a>
+     
+[cite_start][cite: 171]  </a>
     </section>
 
-    <!-- CREATE ACCOUNT -->
     <section id="panel-create" class="hidden" aria-labelledby="pageTitle">
       <h2 class="welcome">Enter your details</h2>
       <p class="sub">We don't use your details for marketing purposes</p>
 
-      <!-- IMPORTANT: id="create-form" so app.js can attach the submit handler -->
       <form id="create-form" class="form">
         <label class="field" for="name">
           <span class="label">First Name <span class="req">*</span></span>
-          <!-- id + name required for app.js -->
-          <input type="text" class="input" id="name" name="name" placeholder="First Name" required />
+          
+[cite_start][cite: 172] <input type="text" class="input" id="name" name="name" placeholder="First Name" required />
         </label>
 
         <label class="field">
           <span class="label">Last Name <span class="req">*</span></span>
-          <input type="text" class="input" placeholder="Last Name" required />
+          <input type="text" class="input" placeholder="Last Name" required name="lastName" />
         </label>
 
         <label class="field">
-          <span class="label">Email Address <span class="req">*</span></span>
-          <input type="email" class="input" placeholder="Enter your email address" required />
+          <span 
+[cite_start][cite: 173] class="label">Email Address <span class="req">*</span></span>
+          <input type="email" class="input" placeholder="Enter your email address" required name="email" />
         </label>
 
         <label class="field">
           <span class="label">Country <span class="req">*</span></span>
-          <select class="input select" required>
+          <select class="input select" required name="country">
             <option value="" selected disabled>Country</option>
             <option>United States</option>
-            <option>India</option>
+        
+[cite_start][cite: 174]     <option>India</option>
             <option>Canada</option>
             <option>United Kingdom</option>
             <option>Australia</option>
@@ -105,18 +105,17 @@
 
         <label class="field">
           <span class="label">Password <span class="req">*</span></span>
-          <input type="password" class="input" placeholder="Create a password" required />
-        </label>
+          <input type="password" class="input" placeholder="Create a password" required name="password" />
+  
+[cite_start][cite: 175]       </label>
 
         <label class="field">
           <span class="label">Confirm Password <span class="req">*</span></span>
           <input type="password" class="input" placeholder="Confirm your password" required />
         </label>
 
-        <!-- Referral code card -->
         <div class="referral-card">
           <div class="referral-header">REFERRAL CODE <span class="req">*</span></div>
-          <!-- id + name required for app.js -->
           <input
             type="text"
             class="input referral-input"
@@ -124,30 +123,33 @@
             name="referral"
             placeholder="Enter your referral code"
             required
-          />
+        
+[cite_start][cite: 177]   />
           <div class="referral-note">
             <span class="warn-icon">⚠️</span>
             A valid referral code is required to create an account
           </div>
         </div>
 
-        <!-- reCAPTCHA visual -->
         <div class="captcha">
           <div class="rc-card" role="group" aria-label="reCAPTCHA mock">
-            <div class="rc-left">
+ 
+[cite_start][cite: 178]            <div class="rc-left">
               <input type="checkbox" id="fake-captcha" class="rc-checkbox" />
               <label for="fake-captcha" class="rc-label">I'm not a robot</label>
             </div>
             <div class="rc-right">
               <img src="assets/recaptcha-logo.png" alt="reCAPTCHA logo" class="rc-logo" />
-              <div class="rc-meta">
+       
+[cite_start][cite: 179]        <div class="rc-meta">
                 <span class="brand">reCAPTCHA</span><br />
                 <span>Privacy - <a href="#" onclick="return false">Terms</a></span>
               </div>
             </div>
           </div>
         </div>
-        <p id="captcha-error" class="captcha-error">Please verify that you are not a robot.</p>
+        <p 
+[cite_start][cite: 180] id="captcha-error" class="captcha-error">Please verify that you are not a robot.</p>
 
 
         <button type="submit" class="btn btn-green">Create Account</button>
@@ -157,10 +159,10 @@
         </p>
       </form>
 
-      <!-- CTA -->
       <a class="orgpath-cta" href="https://orgpath.io" target="_blank" rel="noopener">
         <div class="cta-left">
-          <img class="cta-logo" src="assets/orgpath-logo.png" alt="OrgPath logo" />
+       
+[cite_start][cite: 181]    <img class="cta-logo" src="assets/orgpath-logo.png" alt="OrgPath logo" />
         </div>
         <div class="cta-right">
           <div class="cta-top-row"></div>
@@ -171,7 +173,6 @@
     </section>
   </main>
 
-  <!-- JS -->
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
