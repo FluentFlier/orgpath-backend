@@ -1,10 +1,8 @@
 import express from "express";
-import { Pool } from "pg";
+import pool from "../db.js";
 import { authMiddleware } from "../utils/authMiddleware.js";
-import { config } from "../config.js";
 
 const router = express.Router();
-const pool = new Pool({ connectionString: config.dbUrl });
 
 /**
  * @route GET /api/dashboard
