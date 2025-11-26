@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Employee Dashboard • OrgInsights</title>
+  <title>Team Lead Dashboard • OrgInsights</title>
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
@@ -22,10 +22,10 @@
   <!-- Hero Section -->
   <section class="dash-hero">
     <div class="hero-inner">
-      <h1 class="hero-title">Welcome <span id="emp-name">User</span>,</h1>
+      <h1 class="hero-title">Welcome Team Lead <span id="emp-name">User</span>,</h1>
 
-      <p class="hero-sub"><strong>You are about to embark on a journey of self-discovery.</strong></p>
-      <p class="hero-copy">The OrgInsights Dashboard is where you can create new sessions, continue your assessments, and view reports.</p>
+      <p class="hero-sub"><strong>Manage your team's progress and insights.</strong></p>
+      <p class="hero-copy">The Team Lead Dashboard allows you to view team analytics, create assessments, and monitor performance.</p>
 
       <div class="referral-pill">
         <span class="pill-label">Referral Code</span>
@@ -62,7 +62,7 @@
     <!-- Charts -->
     <div class="charts-grid">
       <div class="chart-container">
-        <h3 class="chart-title">Assessment Score Trend</h3>
+        <h3 class="chart-title">Team Assessment Score Trend</h3>
         <canvas id="scoreLineChart"></canvas>
       </div>
 
@@ -75,17 +75,14 @@
 
   <!-- Main Content -->
   <div class="dash-content">
-    <h2 class="section-title">In progress</h2>
+    <h2 class="section-title">Team Management</h2>
 
-    <!-- ✅ Big green rectangle wrapper -->
     <div class="inprogress-box">
       <div class="session-grid">
-        <!-- new tiles are inserted here -->
         <div id="in-progress-container"></div>
 
-        <!-- Create tile starts alone under the heading; moves right as new tiles are added -->
         <button class="card-new" id="btn-new-session">
-          <div class="card-title">Create New Session</div>
+          <div class="card-title">Create New Team Assessment</div>
           <div class="card-circle"><span class="plus">+</span></div>
         </button>
       </div>
@@ -100,62 +97,58 @@
       <button class="modal-close" aria-label="Close" data-close="pricing-modal">×</button>
 
       <div class="pricing-grid">
-        <!-- LEFT: OrgInsights (blue) -->
         <article class="price-card price-card--blue">
-          <h3 class="pc-title">ORGINSIGHTS<br>ASSESSMENT</h3>
+          <h3 class="pc-title">TEAM ORGINSIGHTS<br>ASSESSMENT</h3>
 
           <div class="pc-price">
             <span class="pc-usd">USD</span>
-            <span class="pc-now-num">49</span>
+            <span class="pc-now-num">149</span>
           </div>
 
           <ul class="pc-features">
-            <li>SELF ASSESSMENT</li>
-            <li>ORGINSIGHTS ASSESSMENT</li>
-            <li>ORGINSIGHTS REPORT</li>
-            <li>ADDITIONAL INSIGHTS REPORT</li>
+            <li>TEAM ASSESSMENT</li>
+            <li>ORGINSIGHTS TEAM REPORT</li>
+            <li>ANALYTICS DASHBOARD</li>
+            <li>TEAM INSIGHTS</li>
           </ul>
 
-          <button class="pc-cta" data-plan="org">PAY NOW</button>
+          <button class="pc-cta" data-plan="team-org">PAY NOW</button>
         </article>
 
-        <!-- MIDDLE: 360 (white) -->
         <article class="price-card">
-          <h3 class="pc-title">360 ASSESSMENT</h3>
+          <h3 class="pc-title">TEAM 360 ASSESSMENT</h3>
 
           <div class="pc-price">
             <span class="pc-usd">USD</span>
-            <span class="pc-now-num">49</span>
+            <span class="pc-now-num">149</span>
           </div>
 
           <ul class="pc-features">
-            <li>SELF ASSESSMENT</li>
-            <li>360 ASSESSMENT</li>
-            <li>360 INSIGHTS REPORT</li>
+            <li>TEAM 360 ASSESSMENT</li>
+            <li>360 TEAM REPORT</li>
+            <li>PERFORMANCE TRACKING</li>
           </ul>
 
-          <button class="pc-cta" data-plan="360">PAY NOW</button>
+          <button class="pc-cta" data-plan="team-360">PAY NOW</button>
         </article>
 
-        <!-- RIGHT: Combo (white) -->
         <article class="price-card">
-          <h3 class="pc-title">ORGINSIGHTS AND<br>360 ASSESSMENT</h3>
+          <h3 class="pc-title">COMPLETE TEAM<br>PACKAGE</h3>
 
           <div class="pc-price">
             <span class="pc-usd">USD</span>
-            <span class="pc-now-num">99</span>
+            <span class="pc-now-num">249</span>
           </div>
 
           <ul class="pc-features">
-            <li>SELF ASSESSMENT</li>
-            <li>ORGINSIGHTS ASSESSMENT</li>
-            <li>360 ASSESSMENT</li>
-            <li>ORGINSIGHTS REPORT</li>
-            <li>ADDITIONAL INSIGHTS REPORT</li>
-            <li>360 INSIGHTS REPORT</li>
+            <li>TEAM ASSESSMENT</li>
+            <li>TEAM 360 ASSESSMENT</li>
+            <li>COMPLETE TEAM REPORTS</li>
+            <li>ADVANCED ANALYTICS</li>
+            <li>PRIORITY SUPPORT</li>
           </ul>
 
-          <button class="pc-cta" data-plan="combo">PAY NOW</button>
+          <button class="pc-cta" data-plan="team-combo">PAY NOW</button>
         </article>
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Employee Dashboard • OrgInsights</title>
+  <title>Company Dashboard • OrgInsights</title>
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
@@ -22,13 +22,13 @@
   <!-- Hero Section -->
   <section class="dash-hero">
     <div class="hero-inner">
-      <h1 class="hero-title">Welcome <span id="emp-name">User</span>,</h1>
+      <h1 class="hero-title">Welcome <span id="emp-name">Company Admin</span>,</h1>
 
-      <p class="hero-sub"><strong>You are about to embark on a journey of self-discovery.</strong></p>
-      <p class="hero-copy">The OrgInsights Dashboard is where you can create new sessions, continue your assessments, and view reports.</p>
+      <p class="hero-sub"><strong>Manage your organization's insights and analytics.</strong></p>
+      <p class="hero-copy">The Company Dashboard provides comprehensive organizational analytics, team management, and strategic insights.</p>
 
       <div class="referral-pill">
-        <span class="pill-label">Referral Code</span>
+        <span class="pill-label">Company Code</span>
         <span id="emp-referral" class="pill-value"></span>
       </div>
     </div>
@@ -62,12 +62,12 @@
     <!-- Charts -->
     <div class="charts-grid">
       <div class="chart-container">
-        <h3 class="chart-title">Assessment Score Trend</h3>
+        <h3 class="chart-title">Organization Assessment Trends</h3>
         <canvas id="scoreLineChart"></canvas>
       </div>
 
       <div class="chart-container">
-        <h3 class="chart-title">Score Distribution</h3>
+        <h3 class="chart-title">Overall Score Distribution</h3>
         <canvas id="scoreBarChart"></canvas>
       </div>
     </div>
@@ -75,17 +75,14 @@
 
   <!-- Main Content -->
   <div class="dash-content">
-    <h2 class="section-title">In progress</h2>
+    <h2 class="section-title">Organization Management</h2>
 
-    <!-- ✅ Big green rectangle wrapper -->
     <div class="inprogress-box">
       <div class="session-grid">
-        <!-- new tiles are inserted here -->
         <div id="in-progress-container"></div>
 
-        <!-- Create tile starts alone under the heading; moves right as new tiles are added -->
         <button class="card-new" id="btn-new-session">
-          <div class="card-title">Create New Session</div>
+          <div class="card-title">Create Company-Wide Assessment</div>
           <div class="card-circle"><span class="plus">+</span></div>
         </button>
       </div>
@@ -100,62 +97,61 @@
       <button class="modal-close" aria-label="Close" data-close="pricing-modal">×</button>
 
       <div class="pricing-grid">
-        <!-- LEFT: OrgInsights (blue) -->
         <article class="price-card price-card--blue">
-          <h3 class="pc-title">ORGINSIGHTS<br>ASSESSMENT</h3>
+          <h3 class="pc-title">ENTERPRISE<br>ORGINSIGHTS</h3>
 
           <div class="pc-price">
             <span class="pc-usd">USD</span>
-            <span class="pc-now-num">49</span>
+            <span class="pc-now-num">999</span>
           </div>
 
           <ul class="pc-features">
-            <li>SELF ASSESSMENT</li>
-            <li>ORGINSIGHTS ASSESSMENT</li>
-            <li>ORGINSIGHTS REPORT</li>
-            <li>ADDITIONAL INSIGHTS REPORT</li>
+            <li>UNLIMITED ASSESSMENTS</li>
+            <li>ORGANIZATION-WIDE REPORTS</li>
+            <li>ADVANCED ANALYTICS</li>
+            <li>TEAM MANAGEMENT</li>
+            <li>PRIORITY SUPPORT</li>
           </ul>
 
-          <button class="pc-cta" data-plan="org">PAY NOW</button>
+          <button class="pc-cta" data-plan="enterprise-org">PAY NOW</button>
         </article>
 
-        <!-- MIDDLE: 360 (white) -->
         <article class="price-card">
-          <h3 class="pc-title">360 ASSESSMENT</h3>
+          <h3 class="pc-title">ENTERPRISE 360</h3>
 
           <div class="pc-price">
             <span class="pc-usd">USD</span>
-            <span class="pc-now-num">49</span>
+            <span class="pc-now-num">999</span>
           </div>
 
           <ul class="pc-features">
-            <li>SELF ASSESSMENT</li>
-            <li>360 ASSESSMENT</li>
-            <li>360 INSIGHTS REPORT</li>
+            <li>UNLIMITED 360 ASSESSMENTS</li>
+            <li>COMPREHENSIVE 360 REPORTS</li>
+            <li>PERFORMANCE TRACKING</li>
+            <li>CUSTOM BRANDING</li>
           </ul>
 
-          <button class="pc-cta" data-plan="360">PAY NOW</button>
+          <button class="pc-cta" data-plan="enterprise-360">PAY NOW</button>
         </article>
 
-        <!-- RIGHT: Combo (white) -->
         <article class="price-card">
-          <h3 class="pc-title">ORGINSIGHTS AND<br>360 ASSESSMENT</h3>
+          <h3 class="pc-title">COMPLETE<br>ENTERPRISE SUITE</h3>
 
           <div class="pc-price">
             <span class="pc-usd">USD</span>
-            <span class="pc-now-num">99</span>
+            <span class="pc-now-num">1699</span>
           </div>
 
           <ul class="pc-features">
-            <li>SELF ASSESSMENT</li>
-            <li>ORGINSIGHTS ASSESSMENT</li>
-            <li>360 ASSESSMENT</li>
-            <li>ORGINSIGHTS REPORT</li>
-            <li>ADDITIONAL INSIGHTS REPORT</li>
-            <li>360 INSIGHTS REPORT</li>
+            <li>ALL ENTERPRISE FEATURES</li>
+            <li>UNLIMITED ASSESSMENTS & 360</li>
+            <li>COMPLETE ANALYTICS SUITE</li>
+            <li>DEDICATED ACCOUNT MANAGER</li>
+            <li>CUSTOM INTEGRATIONS</li>
+            <li>WHITE-LABEL OPTIONS</li>
           </ul>
 
-          <button class="pc-cta" data-plan="combo">PAY NOW</button>
+          <button class="pc-cta" data-plan="enterprise-complete">PAY NOW</button>
         </article>
       </div>
     </div>
