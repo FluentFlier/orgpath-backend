@@ -7,6 +7,7 @@ import assessmentRoutes from "./src/routes/assessment.js";
 // --- NEW IMPORTS ---
 import teamleadRoutes from "./src/routes/teamlead.js";
 import companyRoutes from "./src/routes/company.js";
+import ingestionRoutes from "./src/routes/ingestion.js";
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -26,5 +27,6 @@ app.use("/api/assessment", assessmentRoutes);
 // --- NEW ROUTES ---
 app.use("/api/teamlead", teamleadRoutes);
 app.use("/api/company", companyRoutes);
+app.use("/api/ingestion", ingestionRoutes);
 
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));

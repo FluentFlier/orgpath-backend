@@ -48,3 +48,28 @@ CREATE TABLE IF NOT EXISTS dashboards (
   data JSONB,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
+
+-- 4. INGESTION JOBS
+-- Tracks the status of file uploads and processing
+CREATE TABLE IF NOT EXISTS ingestion_jobs (
+  id SERIAL PRIMARY KEY,
+  file_name TEXT NOT NULL,
+  file_path TEXT NOT NULL, -- Path to local file or S3 key
+  file_type TEXT NOT NULL, -- 'csv', 'pdf', 'docx', etc.
+  status TEXT DEFAULT 'pending', -- 'pending', 'processing', 'completed', 'failed'
+  uploaded_by INT REFERENCES users(id),
+  error_message TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 5. DOCUMENTS
+-- Stores unstructured content extracted from files (for RAG/Search)
+CREATE TABLE IF NOT EXISTS documents (
+  id SERIAL PRIMARY KEY,
+  ingestion_job_id INT REFERENCES ingestion_jobs(id),
+  title TEXT,
+  content TEXT, -- Extracted text content
+  metadata JSONB, -- Extra metadata (page count, author, etc.)
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);

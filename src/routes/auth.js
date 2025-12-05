@@ -4,9 +4,10 @@ import jwt from "jsonwebtoken";
 import { Pool } from "pg";
 import { config } from "../config.js";
 import { OAuth2Client } from 'google-auth-library'; // New Import
+import pool from "../../db/db.js";
 
 const router = express.Router();
-const pool = new Pool({ connectionString: config.dbUrl });
+// const pool = new Pool({ connectionString: config.dbUrl }); // Removed local pool
 
 // --- GOOGLE SSO CONFIG ---
 const GOOGLE_CLIENT_ID = "879626589202-okhopnpcriflfva4c98jin199cb6280e.apps.googleusercontent.com";
@@ -40,11 +41,11 @@ function signToken(user) {
 router.post("/google", async (req, res) => {
   try {
     const { token } = req.body;
-    
+
     // 1. Verify the Google Token
     const ticket = await client.verifyIdToken({
-        idToken: token,
-        audience: GOOGLE_CLIENT_ID,
+      idToken: token,
+      audience: GOOGLE_CLIENT_ID,
     });
     const payload = ticket.getPayload();
     const { email, given_name, family_name } = payload;
