@@ -1,0 +1,16 @@
+Meeting Notes - Q4 Strategy
+Date: 2025-11-20
+Attendees: John, Jane, Bob
+
+1. Review of Q3 performance
+   - Sales up 15%
+   - Engineering delivered 3 major features
+
+2. Q4 Goals
+   - Launch new marketing campaign
+   - Complete data ingestion pipeline
+   - Hire 2 new senior engineers
+
+Action Items:
+- John to finalize budget
+- Jane to draft technical specs

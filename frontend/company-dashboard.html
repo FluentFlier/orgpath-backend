@@ -211,6 +211,21 @@
            <div style="font-size:48px;font-weight:800;color:#333;" id="valRetention">--%</div>
         </div>
       </div>
+
+      <!-- NEW: Data Ingestion Card -->
+      <div class="card">
+        <div class="card-head">
+          <h3>Data Ingestion</h3>
+        </div>
+        <div style="margin:20px 0;">
+          <p style="color:#666;margin-bottom:12px;">Upload CSV or PDF files to ingest data.</p>
+          <div style="display:flex;gap:10px;">
+            <input type="file" id="fileInput" style="flex:1;padding:8px;border:1px solid #ddd;border-radius:4px;">
+            <button id="btnUpload" style="background:#1e88e5;color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;font-weight:600;">Upload</button>
+          </div>
+          <div id="uploadStatus" style="margin-top:12px;font-weight:600;"></div>
+        </div>
+      </div>
     </div>
 
     <footer class="pad" style="height:40px"></footer>

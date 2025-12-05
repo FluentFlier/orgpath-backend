@@ -5,7 +5,7 @@
   // 1. Auth & Session Check
   const token = sessionStorage.getItem('orgpath_token');
   const userJson = sessionStorage.getItem('orgpath_user');
-  
+
   if (!token || !userJson) {
     location.href = 'index.html';
     return;
@@ -55,7 +55,7 @@
       const data = await res.json();
 
       // --- Update UI Elements ---
-      
+
       // Completion
       setText('valTotalCompletion', data.completion.total);
       setText('valMale', data.completion.male + '%');
@@ -79,16 +79,16 @@
       // High Pot & Capability
       setText('valHiPotPct', data.highPotential.percent + '%');
       setText('valHiPotCnt', `(${data.highPotential.count})`);
-      
+
       setText('valCapable', data.capability.capable + '%');
       setText('valNotReady', data.capability.notReady + '%');
-      
+
       // Update the width of the split bar
       const barNo = document.getElementById('barNotReady');
       const barYes = document.getElementById('barCapable');
-      if(barNo && barYes) {
-         barNo.style.width = data.capability.notReady + '%';
-         barYes.style.width = data.capability.capable + '%';
+      if (barNo && barYes) {
+        barNo.style.width = data.capability.notReady + '%';
+        barYes.style.width = data.capability.capable + '%';
       }
 
       // Retention
@@ -102,12 +102,59 @@
   // Helper
   function setText(id, txt) {
     const el = document.getElementById(id);
-    if(el) el.textContent = txt;
+    if (el) el.textContent = txt;
   }
   function setBar(id, pct) {
     const el = document.getElementById(id);
-    if(el) el.style.setProperty('--p', pct + '%');
+    if (el) el.style.setProperty('--p', pct + '%');
   }
 
   await loadCompanyDashboard();
+
+  // 4. File Upload Logic
+  const btnUpload = document.getElementById('btnUpload');
+  const fileInput = document.getElementById('fileInput');
+  const uploadStatus = document.getElementById('uploadStatus');
+
+  if (btnUpload && fileInput) {
+    btnUpload.addEventListener('click', async () => {
+      const file = fileInput.files[0];
+      if (!file) {
+        uploadStatus.textContent = "Please select a file.";
+        uploadStatus.style.color = "red";
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      uploadStatus.textContent = "Uploading...";
+      uploadStatus.style.color = "#666";
+      btnUpload.disabled = true;
+
+      try {
+        const res = await fetch(`${API_BASE}/ingestion/upload`, {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${token}` },
+          body: formData
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          uploadStatus.textContent = `Success! Job ID: ${data.jobId}`;
+          uploadStatus.style.color = "green";
+          fileInput.value = ""; // Clear input
+        } else {
+          throw new Error(data.error || "Upload failed");
+        }
+      } catch (err) {
+        console.error(err);
+        uploadStatus.textContent = "Error: " + err.message;
+        uploadStatus.style.color = "red";
+      } finally {
+        btnUpload.disabled = false;
+      }
+    });
+  }
 })();
