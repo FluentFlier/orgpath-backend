@@ -57,7 +57,7 @@ export const calculateAssessmentScores = (responses) => {
     if (!rawGrouped[key]) rawGrouped[key] = [];
     
     // Logic: Convert 1-5 scale to Percentage (0.2 - 1.0)
-    const normalizedScore = res.value > 1 ? res.value / 5 : res.value; 
+    const normalizedScore = res.value / 5;
     rawGrouped[key].push(normalizedScore);
   });
 

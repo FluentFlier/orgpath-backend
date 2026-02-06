@@ -2,7 +2,8 @@ import express from "express";
 import { Pool } from "pg";
 import { authMiddleware } from "../utils/authMiddleware.js";
 import { config } from "../config.js";
-import { calculateAssessmentScores } from "../services/scoringService.js"; // Import the math logic
+import { calculateAssessmentScores } from "../services/scoringService.js"; 
+import { generateAssessmentPDF } from "../services/pdfService.js"; // <--- New Import
 
 const router = express.Router();
 const pool = new Pool({ connectionString: config.dbUrl });
@@ -21,12 +22,47 @@ router.get("/", async (req, res) => {
   }
 });
 
-// --- 2. POST New Assessment (Auto-Scored) ---
+// --- 2. GET Download PDF Report ---
+// Use this link in frontend: <a href="/api/assessment/ID/report">Download PDF</a>
+router.get("/:id/report", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    // 1. Fetch assessment 
+    const result = await pool.query(`SELECT * FROM assessments WHERE id = $1`, [id]);
+    
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: "Assessment not found" });
+    }
+
+    const assessment = result.rows[0];
+
+    // Security Check: Ensure the logged-in user owns this assessment
+    // (If you want to allow managers to see it, you would add logic here)
+    if (assessment.user_id !== req.user.id) {
+        return res.status(403).json({ error: "Unauthorized access to this report" });
+    }
+
+    // 2. Set headers for PDF download
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader("Content-Disposition", `attachment; filename=OrgPath-Report-${id}.pdf`);
+
+    // 3. Generate PDF
+    generateAssessmentPDF(assessment, res);
+
+  } catch (error) {
+    console.error("Error generating PDF:", error);
+    res.status(500).json({ error: "Server error generating PDF" });
+  }
+});
+
+// --- 3. POST New Assessment (Auto-Scored) ---
 router.post("/", async (req, res) => {
   const client = await pool.connect();
   try {
     const { responses, assessment_type } = req.body;
-    const userId = req.user.id;
+    // Uses the real logged-in user ID
+    const userId = req.user.id; 
 
     // A. Run the Scoring Engine
     const computedScores = calculateAssessmentScores(responses);
@@ -40,7 +76,6 @@ router.post("/", async (req, res) => {
       RETURNING *
     `;
     
-    // We store the full JSON breakdown in 'details'
     const result = await client.query(insertQuery, [
       userId, 
       computedScores.overall_score, 
@@ -50,7 +85,6 @@ router.post("/", async (req, res) => {
 
     await client.query('COMMIT');
 
-    // C. Return the calculated scores to the frontend immediately
     res.json({
       message: "Assessment scored and saved",
       data: result.rows[0],
@@ -66,7 +100,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// --- 3. POST Risk & Succession Data (From earlier today) ---
+// --- 4. POST Risk & Succession Data ---
 router.post("/risk-succession", async (req, res) => {
   const client = await pool.connect();
   try {
