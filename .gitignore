@@ -1,3 +1,13 @@
 node_modules/
 .env
 .DS_Store
+# Dependencies
+node_modules/
+react-frontend/node_modules/
+
+# Secrets
+.env
+backend/.env
+
+# Generated files
+*.pdf

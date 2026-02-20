@@ -1,0 +1,4493 @@
+[
+  {
+    "id": 1,
+    "category": "Sets Purpose",
+    "capability": "Inspires Others",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer to allow others to build their own sense of purpose"
+      },
+      {
+        "value": 1,
+        "text": "Usually prefer to allow others to build their own sense of purpose"
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to allow others to build their own sense of purpose."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to build a shared sense of purpose with others."
+      },
+      {
+        "value": 4,
+        "text": "Usually prefer to build a shared sense of purpose with others."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to build a shared sense of purpose with others."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Sets Purpose",
+    "capability": "Inspires Others",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer to discuss the  present day reality."
+      },
+      {
+        "value": 1,
+        "text": "Usually prefer to discuss business as usual matters."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to discuss business as usual matters."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to discuss the possibilities for the future."
+      },
+      {
+        "value": 4,
+        "text": "Usually prefer to discuss the possibilities for the future."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to discuss the possibilities for the future."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Sets Purpose",
+    "capability": "Inspires Others",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively inspire others to align to a shared purpose.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Sets Purpose",
+    "capability": "Inspires Others",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively articulate a compelling vision of the future.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Sets Purpose",
+    "capability": "Inspires Others",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively inspires others to align to a shared purpose.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Sets Purpose",
+    "capability": "Inspires Others",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively articulates a compelling vision of the future",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Sets Purpose",
+    "capability": "Communicates Clarity",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer to give others the space to do the communicating"
+      },
+      {
+        "value": 1,
+        "text": "Usually prefer to give others the space to do the communicating"
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to give others the space to do the communicating"
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to do the communicating with other groups"
+      },
+      {
+        "value": 4,
+        "text": "Usually prefer to do the communicating with other groups"
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to do the communicating with other groups"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Sets Purpose",
+    "capability": "Communicates Clarity",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always rely on others to seek clarity from myself or others in group communication."
+      },
+      {
+        "value": 1,
+        "text": "Generally prefer to answer questions others have to clarify understanding when communicating."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to answer questions others have to clarify understanding when communicating."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to ask questions to ensure there is shared understanding when communicating."
+      },
+      {
+        "value": 4,
+        "text": "Generally prefer to ask questions to ensure there is shared understanding when communicating."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to ask questions to ensure there is shared understanding when communicating."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Sets Purpose",
+    "capability": "Communicates Clarity",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently articulate a clear message when communicating with others.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Sets Purpose",
+    "capability": "Communicates Clarity",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently create shared understanding across diverse groups.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "category": "Sets Purpose",
+    "capability": "Communicates Clarity",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently articulates a clear message when communicating with others.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "category": "Sets Purpose",
+    "capability": "Communicates Clarity",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently creates shared understanding across diverse groups.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "category": "Sets Purpose",
+    "capability": "Moves Data to Action",
+    "type": "Cognitive Assessment",
+    "question": "Ahmed has twice as much as Patrick. Kenji has half-as much as Sophie. Sophie has $16 less than Ahmed. Patrick has $23 less than John who has $205. How much money does Kenji have? (refer to questions tab for more details - 1)",
+    "options": [
+      {
+        "value": 0,
+        "text": "Any wrong answer"
+      },
+      {
+        "value": 5,
+        "text": "184"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "category": "Sets Purpose",
+    "capability": "Moves Data to Action",
+    "type": "Situational Judgement Task",
+    "question": "Your team has received an invitation to tender for a new project which will bring much needed revenue into your organisation. The company you will be working for is in a sector you are not familiar with and its current problems are ones which you only have a very surface level understanding of. However, given the tight timeframe your team leader has tasked you with pulling together the necessary information to complete the part of the tender that asks your company to demonstrate an understanding of why their current issues need to be resolved. How would you approach this?\n\nAfter considering the following situation, which course of action would suit your approach best?",
+    "options": [
+      {
+        "value": 0,
+        "text": "b) Have an honest discussion with your team and management about whether your company is in an appropriate position to undertake this work."
+      },
+      {
+        "value": 2,
+        "text": "c) Contact someone who has worked within the industry in a similar company to gain their insight and perspective."
+      },
+      {
+        "value": 3,
+        "text": "a) Use your existing knowledge and analytic skills to flesh out the information provided by the client organisation about themselves and their problem."
+      },
+      {
+        "value": 4,
+        "text": "e) Pool together all available team resources to conduct in-depth research into the area, industry, history of event, current action, and where the clients company is positioned within this. Use this information to put together not only a current position statement but also propose some potential directions for addressing the issues."
+      },
+      {
+        "value": 5,
+        "text": "d) Conduct in-depth research into the background of the company, industry, and present issue to develop a clear story about the position of the organisation"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "category": "Sets Purpose",
+    "capability": "Moves Data to Action",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively develop cohesive stories from the analysis of data.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "category": "Sets Purpose",
+    "capability": "Moves Data to Action",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently use data to communicate a clear call to action.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "category": "Sets Purpose",
+    "capability": "Moves Data to Action",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively develops cohesive stories from the analysis of data.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "category": "Sets Purpose",
+    "capability": "Moves Data to Action",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently uses data to communicate a clear call to action.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "category": "Sets Purpose",
+    "capability": "Embraces Diversity",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Like to be viewed as very proper and conventional."
+      },
+      {
+        "value": 1,
+        "text": "Like to be viewed as somewhat proper and conventional."
+      },
+      {
+        "value": 2,
+        "text": "Like to be viewed as a little proper and conventional."
+      },
+      {
+        "value": 3,
+        "text": "Like to be viewed as a little alternative and unconventional."
+      },
+      {
+        "value": 4,
+        "text": "Like to be viewed as somewhat alternative and unconventional."
+      },
+      {
+        "value": 5,
+        "text": "Like to be viewed as very alternative and unconventional."
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "category": "Sets Purpose",
+    "capability": "Embraces Diversity",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer to seek input form those already known to me."
+      },
+      {
+        "value": 1,
+        "text": "Generally prefer to seek input from those already known to me."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to seek input from those already known to me."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to seek the input from new and different people."
+      },
+      {
+        "value": 4,
+        "text": "Generally prefer to seek the input from new and different people."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to seek the input from new and different people."
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "category": "Sets Purpose",
+    "capability": "Embraces Diversity",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively remove systemic barriers to inclusion and accessibility",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "category": "Sets Purpose",
+    "capability": "Embraces Diversity",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently bring people of different backgrounds/perspectives to the table.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "category": "Sets Purpose",
+    "capability": "Embraces Diversity",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively removes systemic barriers to inclusion and accessibility",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "category": "Sets Purpose",
+    "capability": "Embraces Diversity",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently brings people of different backgrounds/perspectives to the table.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "category": "Embraces Agility",
+    "capability": "Navigates Policies and People",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer to circumvent a process or procedure if it isn't working"
+      },
+      {
+        "value": 1,
+        "text": "Usually prefer to circumvent a process or procedure if it isn't work"
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to circumvent a process or procedure if it isn't work"
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to change a process or procedure if it isn't work"
+      },
+      {
+        "value": 4,
+        "text": "Usually prefer to change a process or procedure if it isn't work"
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to change a process or procedure if it isn't working"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "category": "Embraces Agility",
+    "capability": "Navigates Policies and People",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Never seek support when making suggestions on how things should be done."
+      },
+      {
+        "value": 1,
+        "text": "Usually don't seek support when making suggestions on how things should be done."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally don't seek support when making suggestions on how things should be done."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally seek support when making suggestions on how things should be done."
+      },
+      {
+        "value": 4,
+        "text": "Usually seek support when making suggestions on how things should be done."
+      },
+      {
+        "value": 5,
+        "text": "I always seek support when making suggestions on how things should be done."
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "category": "Embraces Agility",
+    "capability": "Navigates Policies and People",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively navigate policies and processes to achieve objectives.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "category": "Embraces Agility",
+    "capability": "Navigates Policies and People",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI tactfully navigate people dynamics to achieve objectives.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "category": "Embraces Agility",
+    "capability": "Navigates Policies and People",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively navigates policies and processes to achieve objectives.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "category": "Embraces Agility",
+    "capability": "Navigates Policies and People",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nTactfully navigates people dynamics to achieve objectives.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "category": "Embraces Agility",
+    "capability": "Thrives in Chaos",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always enjoy order and regularity."
+      },
+      {
+        "value": 1,
+        "text": "Usually enjoy order and regularity."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally enjoy order and regularity."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally enjoy change and novelty."
+      },
+      {
+        "value": 4,
+        "text": "Usually enjoy change and novelty."
+      },
+      {
+        "value": 5,
+        "text": "Always enjoy change and novelty."
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "category": "Embraces Agility",
+    "capability": "Thrives in Chaos",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer to apply tried and tested models of work to different situations."
+      },
+      {
+        "value": 1,
+        "text": "Usually prefer to apply tried and tested models of work to different situations."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to apply tried and tested models of work to different situations."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to allow the situation to determine my model of work."
+      },
+      {
+        "value": 4,
+        "text": "Generally prefer to allow the situation to determine my model of work."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to allow the situation to determine my model of work."
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "category": "Embraces Agility",
+    "capability": "Thrives in Chaos",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI comfortably shift gears as situations/priorities shift.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "category": "Embraces Agility",
+    "capability": "Thrives in Chaos",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI quickly adjust own behaviour in light of new information.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "category": "Embraces Agility",
+    "capability": "Thrives in Chaos",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nComfortably shifts gears as situations/priorities shift.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "category": "Embraces Agility",
+    "capability": "Thrives in Chaos",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nQuickly adjusts own behaviour in light of new information.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "category": "Embraces Agility",
+    "capability": "Leads and Embraces Change",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always end up lending support to the change projects of others."
+      },
+      {
+        "value": 1,
+        "text": "Generally end up lending support to the change projects of others."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally end up lending support to the change projects of others."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally end up planning and running change projects that I am involved in."
+      },
+      {
+        "value": 4,
+        "text": "Generally end up planning and running change projects that I am involved in."
+      },
+      {
+        "value": 5,
+        "text": "Always end up planning and running change projects that I am involved in."
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "category": "Embraces Agility",
+    "capability": "Leads and Embraces Change",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer others to identify improvements to existing processes and practises."
+      },
+      {
+        "value": 1,
+        "text": "Generally prefer others to identify improvements to existing processes and practices."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer others to identify improvements to existing processes and practices."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to look for ways to improve existing processes and practices."
+      },
+      {
+        "value": 4,
+        "text": "Generally prefer to look for ways to improve existing processes and practices."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to look for ways to improve existing processes and practises."
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "category": "Embraces Agility",
+    "capability": "Leads and Embraces Change",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently drive change in response to opportunities.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "category": "Embraces Agility",
+    "capability": "Leads and Embraces Change",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively remove barriers to change.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "category": "Embraces Agility",
+    "capability": "Leads and Embraces Change",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently drives change in response to opportunities.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "category": "Embraces Agility",
+    "capability": "Leads and Embraces Change",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively removes barriers to change.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "category": "Embraces Agility",
+    "capability": "Empowers Team Effectiveness",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer to focus on supporting my own team to reach our goals."
+      },
+      {
+        "value": 1,
+        "text": "Generally prefer to focus on supporting my own team to reach our goals."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to focus on supporting my own team to reach our goals."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to share work and solutions with other teams."
+      },
+      {
+        "value": 4,
+        "text": "Generally prefer to share work and solutions with other teams."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to share work and solutions with other teams."
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "category": "Embraces Agility",
+    "capability": "Empowers Team Effectiveness",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer to support individuals in holding themselves to account."
+      },
+      {
+        "value": 1,
+        "text": "Generally prefer to support individuals in holding themselves to account."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to support individuals in holding themselves to account."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to set up clear accountability within my team."
+      },
+      {
+        "value": 4,
+        "text": "Generally prefer to set up clear accountability within my team."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to set up clear accountability within my team."
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "category": "Embraces Agility",
+    "capability": "Empowers Team Effectiveness",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively build networks of teams with a common mission.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "category": "Embraces Agility",
+    "capability": "Empowers Team Effectiveness",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively empower team/s to achieve results aligned to the organization's objectives.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "category": "Embraces Agility",
+    "capability": "Empowers Team Effectiveness",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively builds networks of teams with a common mission.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "category": "Embraces Agility",
+    "capability": "Empowers Team Effectiveness",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively empowers team/s to achieve results aligned to the organization's objectives.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "category": "Embraces Agility",
+    "capability": "Plans for the Future",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer to act in response to each situation."
+      },
+      {
+        "value": 1,
+        "text": "Usually prefer to act in response to each situation."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to act in response to each situation."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to do things according to a plan."
+      },
+      {
+        "value": 4,
+        "text": "Usually prefer to do things according to a plan."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to do things according to a plan."
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "category": "Embraces Agility",
+    "capability": "Plans for the Future",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always rely on the forecasting and trend analysis of others."
+      },
+      {
+        "value": 1,
+        "text": "Generally rely on the forecasting and trend analysis of others."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally rely on the forecasting and trend analysis of others."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally able to analyze the environment to anticipate emerging trends."
+      },
+      {
+        "value": 4,
+        "text": "Generally able to analyze the environment to anticipate emerging trends."
+      },
+      {
+        "value": 5,
+        "text": "Always able to analyze the environment to anticipate emerging trends."
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "category": "Embraces Agility",
+    "capability": "Plans for the Future",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI proactively analyse the environment to anticipate emerging trends.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "category": "Embraces Agility",
+    "capability": "Plans for the Future",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI develop strategies that accurately anticipate future organizational needs.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "category": "Embraces Agility",
+    "capability": "Plans for the Future",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nProactively analyses the environment to anticipate emerging trends.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "category": "Embraces Agility",
+    "capability": "Plans for the Future",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nDevelops strategies that accurately anticipate future organizational needs.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "category": "Develops Relationships",
+    "capability": "Creates Alliances",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer to help others function independently."
+      },
+      {
+        "value": 1,
+        "text": "Usually prefer to help others function independently."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to help others function independently."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to involve others in what I am doing."
+      },
+      {
+        "value": 4,
+        "text": "Usually prefer to involve others in what I am doing."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to involve others in what I am doing."
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "category": "Develops Relationships",
+    "capability": "Creates Alliances",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always value competition over cooperation."
+      },
+      {
+        "value": 1,
+        "text": "Generally value competition over cooperation."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally value competition over cooperation."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally value cooperation over competition."
+      },
+      {
+        "value": 4,
+        "text": "Generally value cooperation over competition."
+      },
+      {
+        "value": 5,
+        "text": "Always value cooperation over competition."
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "category": "Develops Relationships",
+    "capability": "Creates Alliances",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI establish close on-going relationships with key partners.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "category": "Develops Relationships",
+    "capability": "Creates Alliances",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently bring people together to work on opportunities.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "category": "Develops Relationships",
+    "capability": "Creates Alliances",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEstablishes close on-going relationships with key partners.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "category": "Develops Relationships",
+    "capability": "Creates Alliances",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently brings people together to work on opportunities.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "category": "Develops Relationships",
+    "capability": "Demonstrates Empathy",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Never feel sympathy for those who are worse off than myself."
+      },
+      {
+        "value": 1,
+        "text": "Generally don't feel sympathy for those who are worse off than myself."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally don't feel sympathy for those who are worse off than myself."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally feel sympathy for those who are worse off than myself."
+      },
+      {
+        "value": 4,
+        "text": "Generally feel sympathy for those who are worse off than myself."
+      },
+      {
+        "value": 5,
+        "text": "Always feel sympathy for those who are worse off than myself."
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "category": "Develops Relationships",
+    "capability": "Demonstrates Empathy",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Never find myself going out of my way to make people feel welcome."
+      },
+      {
+        "value": 1,
+        "text": "Generally don't find myself going out of my way to make people feel welcome."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally don't find myself going out of my way to make people feel welcome."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally go out of my way to make people feel welcome."
+      },
+      {
+        "value": 4,
+        "text": "Generally go out of my way to make people feel welcome."
+      },
+      {
+        "value": 5,
+        "text": "Always go out of my way to make people feel welcome."
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "category": "Develops Relationships",
+    "capability": "Demonstrates Empathy",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently demonstrate empathy for others.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "category": "Develops Relationships",
+    "capability": "Demonstrates Empathy",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI create safe spaces for others to share perspectives without judgement.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "category": "Develops Relationships",
+    "capability": "Demonstrates Empathy",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently demonstrates empathy for others.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "category": "Develops Relationships",
+    "capability": "Demonstrates Empathy",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nCreates safe spaces for others to share perspectives without judgement.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "category": "Develops Relationships",
+    "capability": "Influences Responsibly",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "I feel very uncomfortable utilizing others to achieve goals"
+      },
+      {
+        "value": 1,
+        "text": "I feel somewhat uncomfortable utilizing others to achieve goals"
+      },
+      {
+        "value": 2,
+        "text": "I feel a little bit uncomfortable utilizing others to achieve goals"
+      },
+      {
+        "value": 3,
+        "text": "I feel a little bit comfortable utilizing others to achieve goals"
+      },
+      {
+        "value": 4,
+        "text": "I feel somewhat comfortable utilizing others to achieve goals"
+      },
+      {
+        "value": 5,
+        "text": "I feel very comfortable utilizing others achieve goals"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "category": "Develops Relationships",
+    "capability": "Influences Responsibly",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Do not understand how to captivate people"
+      },
+      {
+        "value": 1,
+        "text": "Have a little bit of an understanding of how to captivate people"
+      },
+      {
+        "value": 2,
+        "text": "Have some understanding of how to captivate people"
+      },
+      {
+        "value": 3,
+        "text": "Have a moderate understanding of how to captivate people"
+      },
+      {
+        "value": 4,
+        "text": "Understanding of how to captivate people"
+      },
+      {
+        "value": 5,
+        "text": "Strongly understand how to captivate people"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "category": "Develops Relationships",
+    "capability": "Influences Responsibly",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Never understand the drivers and motivations of others."
+      },
+      {
+        "value": 1,
+        "text": "Generally don't understand the drivers and motivations of others."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally don't understand the drivers and motivations of others."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally able to understand the drivers and motivations of others."
+      },
+      {
+        "value": 4,
+        "text": "Generally able to understand the drivers and motivations of others."
+      },
+      {
+        "value": 5,
+        "text": "Always able to understand the drivers and motivations of others."
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "category": "Develops Relationships",
+    "capability": "Influences Responsibly",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively build followership to advance organizational objectives.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "category": "Develops Relationships",
+    "capability": "Influences Responsibly",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently influence others in an ethical manner.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "category": "Develops Relationships",
+    "capability": "Influences Responsibly",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively builds followership to advance organizational objectives.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "category": "Develops Relationships",
+    "capability": "Influences Responsibly",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently influences others in an ethical manner.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "category": "Develops Relationships",
+    "capability": "Focuses on Customers",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always find myself acting according to my own interests"
+      },
+      {
+        "value": 1,
+        "text": "Usually find myself acting based on my own interests"
+      },
+      {
+        "value": 2,
+        "text": "Occasionally find myself acting based on my own interests"
+      },
+      {
+        "value": 3,
+        "text": "Occasionally take others interests into account"
+      },
+      {
+        "value": 4,
+        "text": "Usually take others interests into account"
+      },
+      {
+        "value": 5,
+        "text": "Always take others interests into account"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "category": "Develops Relationships",
+    "capability": "Focuses on Customers",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Can never really anticipate the needs of others."
+      },
+      {
+        "value": 1,
+        "text": "Generally not able to anticipate the needs of others."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally not able to anticipate the needs of others."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally able to anticipate the needs of others."
+      },
+      {
+        "value": 4,
+        "text": "Generally able to anticipate the needs of others."
+      },
+      {
+        "value": 5,
+        "text": "Always able to anticipate the needs of others."
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "category": "Develops Relationships",
+    "capability": "Focuses on Customers",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently act with the customer in mind.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "category": "Develops Relationships",
+    "capability": "Focuses on Customers",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently prioritize the co-creation of value across stakeholders.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "category": "Develops Relationships",
+    "capability": "Focuses on Customers",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently acts with the customer in mind.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "category": "Develops Relationships",
+    "capability": "Focuses on Customers",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently prioritizes the co-creation of value across stakeholders.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "category": "Develops Relationships",
+    "capability": "Resolves Conflicts",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always find it quite difficult to forgive and forget"
+      },
+      {
+        "value": 1,
+        "text": "Generally find it difficult to forgive and forget"
+      },
+      {
+        "value": 2,
+        "text": "Occasionally find it difficult to forgive and forget"
+      },
+      {
+        "value": 3,
+        "text": "Occasionally find it easy to forgive and forget"
+      },
+      {
+        "value": 4,
+        "text": "Generally find it easy to forgive and forget"
+      },
+      {
+        "value": 5,
+        "text": "Always find it easy to forgive and forget"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "category": "Develops Relationships",
+    "capability": "Resolves Conflicts",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always uncomfortable in dealing with confrontations."
+      },
+      {
+        "value": 1,
+        "text": "Usually uncomfortable in dealing with confrontations."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally uncomfortable in dealing with confrontations."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally comfortable in dealing with confrontations."
+      },
+      {
+        "value": 4,
+        "text": "Usually comfortable in dealing with confrontations."
+      },
+      {
+        "value": 5,
+        "text": "Always comfortable in dealing with confrontations."
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "category": "Develops Relationships",
+    "capability": "Resolves Conflicts",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently read situations quickly to identify potential conflicts.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "category": "Develops Relationships",
+    "capability": "Resolves Conflicts",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively settle disputes in an equitable manner.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "category": "Develops Relationships",
+    "capability": "Resolves Conflicts",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently reads situations quickly to identify potential conflicts.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "category": "Develops Relationships",
+    "capability": "Resolves Conflicts",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively settles disputes in an equitable manner.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "category": "Achieves Excellence",
+    "capability": "Develops Talent",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer to read easy material."
+      },
+      {
+        "value": 1,
+        "text": "Usually prefer to read easy material."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer to read easy material."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to read challenging material."
+      },
+      {
+        "value": 4,
+        "text": "Usually prefer to read challenging material."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to read challenging material."
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "category": "Achieves Excellence",
+    "capability": "Develops Talent",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer others to work to their existing strengths."
+      },
+      {
+        "value": 1,
+        "text": "Usually prefer others to work to their existing strengths."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer others to work to their existing strengths."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally prefer to challenge others to push themselves further."
+      },
+      {
+        "value": 4,
+        "text": "Usually prefer to challenge others to push themselves further."
+      },
+      {
+        "value": 5,
+        "text": "Always prefer to challenge others to push themselves further."
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "category": "Achieves Excellence",
+    "capability": "Develops Talent",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI actively seek personal development opportunities.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "category": "Achieves Excellence",
+    "capability": "Develops Talent",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently invest in the development of others (formal or informal)",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "category": "Achieves Excellence",
+    "capability": "Develops Talent",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nActively seeks personal development opportunities.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "category": "Achieves Excellence",
+    "capability": "Develops Talent",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently invests in the development of others (formal or informal)",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "category": "Achieves Excellence",
+    "capability": "Evolves With Technology",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "I am always hesitant about new ideas"
+      },
+      {
+        "value": 1,
+        "text": "I am somewhat hesitant about new ideas"
+      },
+      {
+        "value": 2,
+        "text": "I am a little bit hesitant about new ideas"
+      },
+      {
+        "value": 3,
+        "text": "I get a little bit excited about new ideas"
+      },
+      {
+        "value": 4,
+        "text": "I get somewhat excited about new ideas"
+      },
+      {
+        "value": 5,
+        "text": "I get excited about new ideas"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "category": "Achieves Excellence",
+    "capability": "Evolves With Technology",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always prefer tried and tested technologies."
+      },
+      {
+        "value": 1,
+        "text": "Usually prefer tried and tested technologies."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally prefer tried and tested technologies."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally like to try new technology as it emerges."
+      },
+      {
+        "value": 4,
+        "text": "Usually like to try new technology as it emerges."
+      },
+      {
+        "value": 5,
+        "text": "Always like to try new technology as it emerges."
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "category": "Achieves Excellence",
+    "capability": "Evolves With Technology",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively research and capitalize on non-traditional ways of working",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "category": "Achieves Excellence",
+    "capability": "Evolves With Technology",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently experiment with new technology.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "category": "Achieves Excellence",
+    "capability": "Evolves With Technology",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively researches and capitalizes on non-traditional ways of working.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "category": "Achieves Excellence",
+    "capability": "Evolves With Technology",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently experiments with new technology.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "category": "Achieves Excellence",
+    "capability": "Takes Ownership",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "I always have to adjust my commitments"
+      },
+      {
+        "value": 1,
+        "text": "I often have to adjust my commitments"
+      },
+      {
+        "value": 2,
+        "text": "I make adjustments to my commitments a little"
+      },
+      {
+        "value": 3,
+        "text": "I sometimes follow through on my commitments"
+      },
+      {
+        "value": 4,
+        "text": "I often follow through on my commitments"
+      },
+      {
+        "value": 5,
+        "text": "I always follow through on my commitments"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "category": "Achieves Excellence",
+    "capability": "Takes Ownership",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "When I am given feedback on my work I carefully interpret which to apply to my work moving forward"
+      },
+      {
+        "value": 1,
+        "text": "When I am given feedback on my work I will usually apply some of it where I can"
+      },
+      {
+        "value": 2,
+        "text": "When I am given feedback on my work I will occasionally apply some of it where I can"
+      },
+      {
+        "value": 3,
+        "text": "I occasionally seek feedback on my work and apply it when I can"
+      },
+      {
+        "value": 4,
+        "text": "I usually seek feedback on my work and apply it when I can"
+      },
+      {
+        "value": 5,
+        "text": "I always seek feedback on my work, whether good or bad, and seek to apply it in all future endeavors"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "category": "Achieves Excellence",
+    "capability": "Takes Ownership",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently take full responsibility of everything under my influence.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "category": "Achieves Excellence",
+    "capability": "Takes Ownership",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently follow through on commitments.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "category": "Achieves Excellence",
+    "capability": "Takes Ownership",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently takes full responsibility of everything under their influence.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "category": "Achieves Excellence",
+    "capability": "Takes Ownership",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently follows through on commitments.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "category": "Achieves Excellence",
+    "capability": "Drives Performance and Productivity",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always unable to turn my plans into actions."
+      },
+      {
+        "value": 1,
+        "text": "Usually unable to turn my plans into actions."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally unable to turn my plans into actions."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally able to turn my plans into actions."
+      },
+      {
+        "value": 4,
+        "text": "Usually able to turn my plans into actions."
+      },
+      {
+        "value": 5,
+        "text": "Always able to turn my plans into actions."
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "category": "Achieves Excellence",
+    "capability": "Drives Performance and Productivity",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Never set high standards for myself and others."
+      },
+      {
+        "value": 1,
+        "text": "Generally don't set high standards for myself and others."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally don't set high standards for myself and others."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally set high standards for myself and others."
+      },
+      {
+        "value": 4,
+        "text": "Generally set high standards for myself and others."
+      },
+      {
+        "value": 5,
+        "text": "Always set high standards for myself and others."
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "category": "Achieves Excellence",
+    "capability": "Drives Performance and Productivity",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively balance competing priorities.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "category": "Achieves Excellence",
+    "capability": "Drives Performance and Productivity",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently ensure the optimal use of resources for successful project outcomes.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "category": "Achieves Excellence",
+    "capability": "Drives Performance and Productivity",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively balances competing priorities.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "category": "Achieves Excellence",
+    "capability": "Drives Performance and Productivity",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently ensures the optimal use of resources for successful project outcomes.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "category": "Achieves Excellence",
+    "capability": "Exercises Sound Judgement/Consulting",
+    "type": "Cognitive Assessment",
+    "question": "Based on the series of shapes below, which option will come next in the pattern? (refer to questions tab for more details - 2)",
+    "options": [
+      {
+        "value": 0,
+        "text": "B/C/D"
+      },
+      {
+        "value": 5,
+        "text": "A"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "category": "Achieves Excellence",
+    "capability": "Exercises Sound Judgement/Consulting",
+    "type": "Situational Judgement Task",
+    "question": "A member of your team has come to you with a complaint against another team within your organization. According to your team member, members of this other team have 'stolen' a resource which you and your team know is critical to achieving your current deliverables. The team member advises you that they have tried to approach the leader of the other team about getting the resource back but they only received a curt brush off and instruction to 'let them do their work'. How would you proceed with this situation?\n\nAfter considering the following situation, which course of action would suit your approach best?",
+    "options": [
+      {
+        "value": 0,
+        "text": "a) Immediately escalate the issue to the division executive citing that not only does the other team need to return your resources immediately but that you are also expecting an apology to your team member for their rude treatment  OR  b) Email the other team leader telling them that you would like to know why they thought it was ok to take your resources and then treat your staff poorly  OR  d) Investigate whether there is another resource within the organisation your team can poach to achieve your outcomes without the resource that has been taken from you"
+      },
+      {
+        "value": 3,
+        "text": "e) Discuss with your team potential ways of still achieving your outcomes without the resource as going without may be an easier route than negotiating with the other team"
+      },
+      {
+        "value": 5,
+        "text": "c) Arrange a meeting with the other team leader and have a conversation about the competing needs of the two teams regarding resources and how this can be addressed now and in the future. Also address with them their perspective on what happened with your team member"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "category": "Achieves Excellence",
+    "capability": "Exercises Sound Judgement/Consulting",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively balance analysis, experience and wisdom when making decisions.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "category": "Achieves Excellence",
+    "capability": "Exercises Sound Judgement/Consulting",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently make decisions that demonstrate and understanding of the bigger picture.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "category": "Achieves Excellence",
+    "capability": "Exercises Sound Judgement/Consulting",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively balances analysis, experience and wisdom when making decisions.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "category": "Achieves Excellence",
+    "capability": "Exercises Sound Judgement/Consulting",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently makes decisions that demonstrate and understanding of the bigger picture.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "category": "Limits Risk",
+    "capability": "Scans for Political and Internal Impacts",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always unable to predict the political impacts of my actions."
+      },
+      {
+        "value": 1,
+        "text": "Generally unable to predict the political impacts of my actions."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally unable to predict the political impacts of my actions."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally able to predict the political impacts of my actions."
+      },
+      {
+        "value": 4,
+        "text": "Generally able to predict the political impacts of my actions."
+      },
+      {
+        "value": 5,
+        "text": "Always able to predict the political impacts of my actions."
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "category": "Limits Risk",
+    "capability": "Scans for Political and Internal Impacts",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always unable to predict the positive and negative consequences of my actions."
+      },
+      {
+        "value": 1,
+        "text": "Generally unable to predict the positive and negative consequences of my actions."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally unable to predict the positive and negative consequences of my actions."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally able to predict the positive and negative consequences of my actions."
+      },
+      {
+        "value": 4,
+        "text": "Generally able to predict the positive and negative consequences of my actions."
+      },
+      {
+        "value": 5,
+        "text": "Always able to predict the positive and negative consequences of my actions."
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "category": "Limits Risk",
+    "capability": "Scans for Political and Internal Impacts",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI demonstrate an effective understanding of political, social and economic factors when dealing with complex situations.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "category": "Limits Risk",
+    "capability": "Scans for Political and Internal Impacts",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively anticipate positive and negative outcomes of complex situations.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "category": "Limits Risk",
+    "capability": "Scans for Political and Internal Impacts",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nDemonstrates an effective understanding of political, social and economic factors when dealing with complex situations.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "category": "Limits Risk",
+    "capability": "Scans for Political and Internal Impacts",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively anticipates positive and negative outcomes of complex situations.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "category": "Limits Risk",
+    "capability": "Manages Risk",
+    "type": "Situational Judgement Task",
+    "question": "During todays team meeting your boss has announced that your team will now be using a drastically new process and system for handling confidential client files. You have all been given one weeks notice to adjust to this change and familiarize with the new systems before the complete transition over is expected. How would you utilize this time best?\n\nAfter considering the following situation, which course of action would suit your approach best?",
+    "options": [
+      {
+        "value": 0,
+        "text": "a) Make the most of your last week using the old system to get as much done as possible in anticipation that things will be slower for a period after the new system comes into place."
+      },
+      {
+        "value": 2,
+        "text": "b) Dedicate as much time as possible, without losing productivity on your workload, on learning how to best use the new systems.  OR  c) Schedule time with the team and the boss to understand why the new systems are important and being implemented. You want to create buy in before it comes into place to make sure everyone is on board."
+      },
+      {
+        "value": 4,
+        "text": "d) Spend time actively critiquing the new system to look for potential risks and negative impacts this could have on your team and your productivity. Bring these to the attention of your boss as a reason to delay the system implementation until these can be mitigated enough to not impact heavily on productivity."
+      },
+      {
+        "value": 5,
+        "text": "e) Schedule time with your team to evaluate and review the system for potential problems and potential strengths or the program and your team. As a team, work together to create a plan to handle delays or negative impacts as they arise."
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "category": "Limits Risk",
+    "capability": "Manages Risk",
+    "type": "Personality Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "I always make very quick decisions, even if I do not have all of the information"
+      },
+      {
+        "value": 1,
+        "text": "I often make very quick decisions, even if I do not have all of the information"
+      },
+      {
+        "value": 2,
+        "text": "I can sometimes make very quick decisions, even if I do not have all of the necessary information"
+      },
+      {
+        "value": 3,
+        "text": "I can sometimes ensure I have all of the necessary information, and take time before making decisions."
+      },
+      {
+        "value": 4,
+        "text": "I often ensure I have all of the necessary information, and take time before making decisions."
+      },
+      {
+        "value": 5,
+        "text": "I always ensure I have all of the necessary information, and take time before making decisions."
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "category": "Limits Risk",
+    "capability": "Manages Risk",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively identify processes/measures to mitigate risk while still striving to attain objectives.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "category": "Limits Risk",
+    "capability": "Manages Risk",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI accurately evaluate risk potential.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "category": "Limits Risk",
+    "capability": "Manages Risk",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively identifies processes/measures to mitigate risk while still striving to attain objectives.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "category": "Limits Risk",
+    "capability": "Manages Risk",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nAccurately evaluates risk potential.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "category": "Limits Risk",
+    "capability": "Reasons critically and solves problems",
+    "type": "Cognitive Assessment",
+    "question": "Consider the problem below and select the correct answer (refer to questions tab for more details - 3)",
+    "options": [
+      {
+        "value": 0,
+        "text": "A/C/D/E"
+      },
+      {
+        "value": 5,
+        "text": "B"
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "category": "Limits Risk",
+    "capability": "Reasons critically and solves problems",
+    "type": "Situational Judgement Task",
+    "question": "A client has come to you requiring an urgent intervention for a conflict and communication issue amongst their middle management team. The problems have been going on for some time but has recently escalated to become a serious issue with employees threatening to take industrial or legal action if it is not resolved quickly. Given the pressing nature and seriousness of the problem, how would you choose to approach it?\n\nAfter considering the following situation, which course of action would suit your approach best?",
+    "options": [
+      {
+        "value": 4,
+        "text": "c) Feeling that it would be better to gain a bit more information before deciding on an approach, you quickly arrange for times to go in and speak to the relevant people involved and review essential records of events. Utilise this fresh information to adapt existing interventions to fit the current crisis.  OR  d) Spend some time making yourself aware of the current trends and research in the area and how this is being applied to conflict and communication. Using this data and the information given to you by the client, create a new intervention to suit their needs."
+      },
+      {
+        "value": 5,
+        "text": "e) Given the time restrictions, divide your team to be able to cover current trends in industrial action and outcomes, research, and position of other organisations, as well as getting more information from the involved individuals within the client organisation. Consolidate this information to provide a highly personalised strategy for your client."
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "category": "Limits Risk",
+    "capability": "Reasons critically and solves problems",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI consistently survey all possible solutions, looking beyond the obvious, to identify the best solution.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "category": "Limits Risk",
+    "capability": "Reasons critically and solves problems",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively conduct qualitative analyses to understand problems.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "category": "Limits Risk",
+    "capability": "Reasons critically and solves problems",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nConsistently surveys all possible solutions, looking beyond the obvious, to identify the best solution.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "category": "Limits Risk",
+    "capability": "Reasons critically and solves problems",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively conducts qualitative analyses to understand problems.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "category": "Limits Risk",
+    "capability": "Establishes governance",
+    "type": "Likert Question",
+    "question": "“Which of the following descriptions best represents you?”",
+    "options": [
+      {
+        "value": 0,
+        "text": "Always rely on others to set up internal mechanisms to increase accountability."
+      },
+      {
+        "value": 1,
+        "text": "Generally rely on others to set up internal mechanisms to increase accountability."
+      },
+      {
+        "value": 2,
+        "text": "Occasionally rely on others to set up internal mechanisms to increase accountability."
+      },
+      {
+        "value": 3,
+        "text": "Occasionally look to set up internal mechanisms to increase accountability."
+      },
+      {
+        "value": 5,
+        "text": "Always look to set up internal mechanisms to increase accountability."
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "category": "Limits Risk",
+    "capability": "Establishes governance",
+    "type": "Situational Judgement Task",
+    "question": "After an organizational restructure, you are placed in charge of a medium-sized department. After your first week, an employee approaches you accusing your predecessor of playing favourites when it comes to salary reviews. After reviewing the performance data of the employees who did and didn't receive salary increased, you notice that some of those who received increases were not high performers, while others were. What approach would you take to ensure this issue does not occur again?\n\nAfter considering the following situation, which course of action would suit your approach best?",
+    "options": [
+      {
+        "value": 0,
+        "text": "b) Reduce the salaries of those who were not high performers to ensure only high performers are rewarded."
+      },
+      {
+        "value": 1,
+        "text": "d) Make a note to yourself for the next salary review that the low performers will not receive an increase, and ensure that the high performers are appropriately rewarded at the next salary review"
+      },
+      {
+        "value": 2,
+        "text": "e) Engage an external consultancy to conduct a comprehensive salary review of all staff in order to inform your decision making at the next salary review."
+      },
+      {
+        "value": 4,
+        "text": "c) Notify staff that salaries will be based purely on performance in the future, redistribute the organisation's competency framework to ensure everyone understands what high performance looks like"
+      },
+      {
+        "value": 5,
+        "text": "a) Develop a salary banding against the organization's competency framework, with levels of salary aligned to desired behaviours. Publicise this framework and levels while redesigning the salary review process to align with the framework"
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "category": "Limits Risk",
+    "capability": "Establishes governance",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively establish governance mechanisms to ensure accountability.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "category": "Limits Risk",
+    "capability": "Establishes governance",
+    "type": "Self-Rated Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate yourself on the following item.\n\nI effectively establish governance mechanisms to ensure transparency.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "category": "Limits Risk",
+    "capability": "Establishes governance",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively establishes governance mechanisms to ensure accountability.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "category": "Limits Risk",
+    "capability": "Establishes governance",
+    "type": "Other Rater Items",
+    "question": "On a scale of 0 to 5 with 1 being 'Strongly Disagree' and 5 being 'Strongly Agree,' how would you rate [candidate's name] on the following items.\n\nEffectively establishes governance mechanisms to ensure transparency.",
+    "options": [
+      {
+        "value": 0,
+        "text": "Strongly Disagree"
+      },
+      {
+        "value": 1,
+        "text": "Somewhat Disagree"
+      },
+      {
+        "value": 2,
+        "text": "Mildly Disagree"
+      },
+      {
+        "value": 3,
+        "text": "Mildly Agree"
+      },
+      {
+        "value": 4,
+        "text": "Somewhat Agree"
+      },
+      {
+        "value": 5,
+        "text": "Strongly Agree"
+      }
+    ]
+  }
+]

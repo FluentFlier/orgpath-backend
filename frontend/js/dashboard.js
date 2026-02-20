@@ -32,44 +32,46 @@ document.addEventListener("DOMContentLoaded", async () => {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to load dashboard");
 
-      // Clear any old/fake assessment tiles
+      // Clear any old assessment tiles
       document.querySelectorAll('.card-session').forEach(tile => tile.remove());
 
-      // This is our code from src/routes/dashboard.js!
       if (data.assessments && data.assessments.length > 0) {
         data.assessments.forEach((a) => {
-          // Add a tile for each *real* assessment
+          // Format score as percentage (e.g., 0.6 -> 60%)
+          const pctScore = a.score ? (parseFloat(a.score) * 100).toFixed(0) + "%" : "In Progress";
+          
           addSessionTile(
-            `Assessment #${a.id}`, // Label
-            `Score: ${a.score || 'In Progress'}`, // Score
-            new Date(a.created_at).toLocaleDateString() // Date
+            a.id, // Pass ID
+            `Assessment #${a.id}`,
+            pctScore,
+            new Date(a.created_at).toLocaleDateString()
           );
         });
       }
     } catch (err) {
       console.error("Dashboard fetch error:", err);
-      alert("Could not load dashboard data. Please log in again.");
-      sessionStorage.clear();
-      location.href = "index.html";
     }
   }
 
   // 5. Helper function to add assessment tiles to the page
-  function addSessionTile(title, score, date) {
+  function addSessionTile(id, title, score, date) {
     if (!assessmentGrid || !createTile) return;
     
     const tile = document.createElement('div');
-    tile.className = 'card-session'; // Use class from styles.css
+    tile.className = 'card-session'; 
   
+    // Notice we changed the "Continue" button to a "Download" button!
     tile.innerHTML = `
       <div class="card-session-inner">
         <div class="card-title">${title}</div>
         <div style="text-align: center; margin: 10px 0;">
-          <div><strong>${score}</strong></div>
-          <div style="font-size: 14px; color: #666;">${date}</div>
+          <div style="font-size: 28px; font-weight: 800; color: #0f8f2f;">${score}</div>
+          <div style="font-size: 14px; color: #666;">Completed: ${date}</div>
         </div>
         <div class="card-actions">
-          <button class="btn-start" disabled>Continue</button>
+          <button class="btn-start" onclick="downloadEmployeeReport(${id})" style="width:100%; border-color: #1e88e5; color: #1e88e5;">
+            📄 Download PDF
+          </button>
         </div>
       </div>
     `;
@@ -77,13 +79,43 @@ document.addEventListener("DOMContentLoaded", async () => {
     assessmentGrid.insertBefore(tile, createTile);
   }
 
-  // 6. Logout Button
+  // 6. Global Download Function (Attached to window so the button can see it)
+  window.downloadEmployeeReport = async function(id) {
+    const btn = event.target;
+    const originalText = btn.textContent;
+    btn.textContent = "Downloading...";
+    btn.disabled = true;
+
+    try {
+        const res = await fetch(`${API_BASE}/assessment/${id}/report`, {
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+
+        if (!res.ok) throw new Error("Failed to download PDF");
+
+        const blob = await res.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `My-OrgPath-Report-${id}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+    } catch (err) {
+        alert(err.message);
+    } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
+    }
+  };
+
+  // 7. Logout Button
   document.getElementById('btn-logout')?.addEventListener('click', () => {
     sessionStorage.clear();
-    location.href = 'index.html';
+    location.href = "index.html";
   });
 
-  // 7. Modal Open/Close Logic (from app.js)
+  // 8. Modal Open/Close Logic
   const modal = document.getElementById('pricing-modal');
   const openBtn = document.getElementById('btn-new-session');
   function openModal() { modal?.classList.remove('hidden'); }
@@ -95,14 +127,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  // 8. --- NEW --- Hook up the "PAY NOW" button to the API
+  // 9. --- FIXED "PAY NOW" API LOGIC ---
   modal?.addEventListener('click', async (e) => {
     const btn = e.target.closest('.pc-cta');
     if (!btn) return;
 
-    // We'll just create a fake assessment with a random score for now
-    const fakeResponses = { q1: "answer", q2: 4 };
-    const fakeScore = Math.floor(Math.random() * (95 - 75 + 1)) + 75; // Score between 75-95
+    btn.textContent = "Processing...";
+
+    // We send REAL structured data to test the actual Math Engine
+    const realResponses = [
+        { category: "Limits Risk", capability: "Manages Risk", value: 5 },
+        { category: "Embraces Agility", capability: "Thrives in Chaos", value: 4 },
+        { category: "Achieves Excellence", capability: "Develops Talent", value: 3 },
+        { category: "Develops Relationships", capability: "Resolves Conflicts", value: 2 },
+        { category: "Sets Purpose", capability: "Inspires Others", value: 1 }
+    ];
 
     try {
       const res = await fetch(`${API_BASE}/assessment`, {
@@ -112,24 +151,25 @@ document.addEventListener("DOMContentLoaded", async () => {
           'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
-          responses: fakeResponses,
-          score: fakeScore
+          assessment_type: "self",
+          responses: realResponses
         })
       });
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to create assessment");
 
-      // It worked! Close the modal and reload the dashboard
+      // It worked! Close the modal, fix the button, and reload the tiles
+      btn.textContent = "PAY NOW";
       closeModal();
-      await loadAssessments(); // Re-fetch to show the new assessment
+      await loadAssessments(); 
 
     } catch (err) {
-      alert(`Error creating assessment: ${err.message}`);
+      alert(`Error: ${err.message}`);
+      btn.textContent = "PAY NOW";
     }
   });
 
-  // ---
   // Finally, load the assessments when the page first opens
   await loadAssessments();
 });
