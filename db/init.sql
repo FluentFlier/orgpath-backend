@@ -7,16 +7,19 @@ CREATE TABLE IF NOT EXISTS users (
   username      TEXT UNIQUE,
   email         TEXT UNIQUE NOT NULL,
   password_hash TEXT NOT NULL,
-  
+
   -- Role Management (A/B/C codes)
   referral_code TEXT,
   role          TEXT NOT NULL DEFAULT 'employee', -- 'employee', 'lead', 'company'
-  
+
   -- Extra fields found in the sponsor's legacy database
   phone         TEXT,
   job_title     TEXT,
   department    TEXT,
-  
+
+  -- Team-lead relationship mapping (#118)
+  team_lead_id  INT REFERENCES users(id),
+
   created_at    TIMESTAMPTZ DEFAULT NOW()
 );
 
@@ -25,17 +28,17 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS assessments (
   id SERIAL PRIMARY KEY,
   user_id INT REFERENCES users(id),
-  
+
   -- The raw answers (Question 1: Answer A)
-  responses JSONB, 
-  
+  responses JSONB,
+
   -- The calculated breakdown (Agility: 80%, Risk: 70%)
   -- This replaces their massive 50-column 'scores' table
-  category_scores JSONB, 
-  
+  category_scores JSONB,
+
   -- The final overall score
   score NUMERIC,
-  
+
   status TEXT DEFAULT 'completed', -- 'in_progress', 'completed'
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
@@ -73,3 +76,22 @@ CREATE TABLE IF NOT EXISTS documents (
   metadata JSONB, -- Extra metadata (page count, author, etc.)
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
+
+-- 6. DOCUMENT CHUNKS (for RAG pipeline)
+-- Splits documents into searchable chunks for retrieval-augmented generation
+CREATE TABLE IF NOT EXISTS document_chunks (
+  id SERIAL PRIMARY KEY,
+  document_id INT REFERENCES documents(id) ON DELETE CASCADE,
+  chunk_index INT NOT NULL,
+  content TEXT NOT NULL,
+  token_count INT,
+  metadata JSONB,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Index for fast team-lead lookups
+CREATE INDEX IF NOT EXISTS idx_users_team_lead ON users(team_lead_id);
+CREATE INDEX IF NOT EXISTS idx_users_department ON users(department);
+CREATE INDEX IF NOT EXISTS idx_users_role ON users(role);
+CREATE INDEX IF NOT EXISTS idx_assessments_user ON assessments(user_id);
+CREATE INDEX IF NOT EXISTS idx_document_chunks_doc ON document_chunks(document_id);
