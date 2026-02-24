@@ -8,6 +8,8 @@ import assessmentRoutes from "./src/routes/assessment.js";
 import teamleadRoutes from "./src/routes/teamlead.js";
 import companyRoutes from "./src/routes/company.js";
 import ingestionRoutes from "./src/routes/ingestion.js";
+import readinessRoutes from "./src/routes/readiness.js";
+import searchRoutes from "./src/routes/search.js";
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -28,5 +30,7 @@ app.use("/api/assessment", assessmentRoutes);
 app.use("/api/teamlead", teamleadRoutes);
 app.use("/api/company", companyRoutes);
 app.use("/api/ingestion", ingestionRoutes);
+app.use("/api/readiness", readinessRoutes);
+app.use("/api/search", searchRoutes);
 
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
