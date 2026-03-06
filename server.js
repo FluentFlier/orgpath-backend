@@ -28,7 +28,7 @@ app.use("/api/assessment", assessmentRoutes);
 app.use("/api/teamlead", teamleadRoutes);
 app.use("/api/company", companyRoutes);
 
-// --- NEW ROUTE: Fetch real employees for the directory ---
+// --- Fetch ALL real employees for the directory ---
 app.get("/api/users", async (req, res) => {
   try {
     // Only fetch employees (no passwords or sensitive data!)
@@ -41,6 +41,23 @@ app.get("/api/users", async (req, res) => {
   } catch (err) {
     console.error("Error fetching users:", err);
     res.status(500).json({ error: "Failed to fetch users" });
+  }
+});
+
+// --- NEW ROUTE: Fetch a single user by ID for the Member Detail View ---
+app.get("/api/users/:id", async (req, res) => {
+  try {
+    const result = await pool.query(
+      `SELECT id, first_name, last_name, email, role, department, title, performance_rating 
+       FROM users 
+       WHERE id = $1`, 
+      [req.params.id]
+    );
+    if (result.rows.length === 0) return res.status(404).json({ error: "User not found" });
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error("Error fetching user:", err);
+    res.status(500).json({ error: "Failed to fetch user" });
   }
 });
 
