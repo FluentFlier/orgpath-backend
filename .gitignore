@@ -10,4 +10,7 @@ react-frontend/node_modules/
 backend/.env
 
 # Generated files
-*.pdf
+*.pdfEnterprise Tool - Score Calculations.xlsx
+Data Set - Scores.csv
+Orders.csv
+debug_code.txt

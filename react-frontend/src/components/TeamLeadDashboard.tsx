@@ -35,17 +35,19 @@ interface TeamLeadDashboardProps {
   teamLeadName?: string;
 }
 
-export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: TeamLeadDashboardProps) {
+export function TeamLeadDashboard({ onLogout, teamLeadName = "Team Leader" }: TeamLeadDashboardProps) {
   const [activeNav, setActiveNav] = useState("dashboard");
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [memberSearch, setMemberSearch] = useState("");
   const [selectedMemberDetail, setSelectedMemberDetail] = useState<number | null>(null);
 
-  // --- NEW: Real Data States ---
+  // --- Real Data States ---
   const [user, setUser] = useState<any>(null);
   const [dashboardData, setDashboardData] = useState<any>(null);
+  const [members, setMembers] = useState<any[]>([]); // Holds Real Team Members
+  const [loadingMembers, setLoadingMembers] = useState(true);
 
-  // --- NEW: Fetch Data on Load ---
+  // --- Fetch Data on Load ---
   useEffect(() => {
     // 1. Get real user name
     const userStr = sessionStorage.getItem("orgpath_user");
@@ -54,9 +56,10 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
     }
 
     // 2. Fetch the team lead dashboard stats from our Node API
+    const token = sessionStorage.getItem("orgpath_token");
+
     const fetchDashboard = async () => {
       try {
-        const token = sessionStorage.getItem("orgpath_token");
         const res = await fetch("http://localhost:8080/api/teamlead/dashboard", {
           headers: { Authorization: `Bearer ${token}` }
         });
@@ -70,7 +73,28 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
       }
     };
 
+    // 3. Fetch real employees for the directory
+    const fetchMembers = async () => {
+      setLoadingMembers(true);
+      try {
+        const res = await fetch("http://localhost:8080/api/users", {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        if (res.ok) {
+          const data = await res.json();
+          // Filter to only show employees
+          const onlyEmployees = Array.isArray(data) ? data.filter((u: any) => u.role === 'employee') : [];
+          setMembers(onlyEmployees);
+        }
+      } catch (err) {
+        console.error("Failed to load members:", err);
+      } finally {
+        setLoadingMembers(false);
+      }
+    };
+
     fetchDashboard();
+    fetchMembers();
   }, []);
 
   const navItems = [
@@ -80,35 +104,15 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
     { id: "settings", label: "Settings", icon: Settings },
   ];
 
-  // Team Information - Marketing & Growth team as example
+  // Team Information
   const teamInfo = {
-    name: "Marketing & Growth",
-    department: "Marketing",
-    teamLead: teamLeadName,
-    leadRole: "Marketing Director",
-    memberCount: 15,
-    healthScore: 92,
+    name: user?.department || "Marketing & Growth",
+    department: user?.department || "Marketing",
+    teamLead: user ? `${user.first_name} ${user.last_name || ''}` : teamLeadName,
+    leadRole: user?.title || "Team Director",
+    healthScore: dashboardData?.healthScore || 92,
     color: "#06A119",
   };
-
-  // Team Members Data
-  const teamMembers = [
-    { id: 1, name: "Alex Turner", role: "Content Strategist", email: "alex.t@orgpath.com", phone: "+1 (555) 234-5679", status: "Active", joinDate: "2023-01-15", performance: 85 },
-    { id: 2, name: "Sophie Martin", role: "Social Media Manager", email: "sophie.m@orgpath.com", phone: "+1 (555) 234-5680", status: "Active", joinDate: "2023-03-20", performance: 92 },
-    { id: 3, name: "Emma Wilson", role: "SEO Specialist", email: "emma.w@orgpath.com", phone: "+1 (555) 234-5681", status: "Active", joinDate: "2023-02-10", performance: 88 },
-    { id: 4, name: "Lucas Anderson", role: "Growth Hacker", email: "lucas.a@orgpath.com", phone: "+1 (555) 234-5682", status: "Active", joinDate: "2023-05-12", performance: 90 },
-    { id: 5, name: "Ryan Cooper", role: "Digital Marketing Specialist", email: "ryan.c@orgpath.com", phone: "+1 (555) 234-5683", status: "Active", joinDate: "2023-04-08", performance: 87 },
-    { id: 6, name: "Jessica Hill", role: "Brand Manager", email: "jessica.h@orgpath.com", phone: "+1 (555) 234-5684", status: "Active", joinDate: "2023-06-15", performance: 91 },
-    { id: 7, name: "Brandon Scott", role: "Marketing Analyst", email: "brandon.s@orgpath.com", phone: "+1 (555) 234-5685", status: "Active", joinDate: "2023-07-01", performance: 84 },
-    { id: 8, name: "Rachel Green", role: "Campaign Coordinator", email: "rachel.g@orgpath.com", phone: "+1 (555) 234-5686", status: "Active", joinDate: "2023-08-20", performance: 86 },
-    { id: 9, name: "Tyler Moore", role: "Content Writer", email: "tyler.m@orgpath.com", phone: "+1 (555) 234-5687", status: "Active", joinDate: "2023-09-05", performance: 83 },
-    { id: 10, name: "Hannah Davis", role: "Graphic Designer", email: "hannah.d@orgpath.com", phone: "+1 (555) 234-5688", status: "Active", joinDate: "2023-10-10", performance: 89 },
-    { id: 11, name: "Jordan Baker", role: "Marketing Coordinator", email: "jordan.b@orgpath.com", phone: "+1 (555) 234-5689", status: "Active", joinDate: "2024-01-15", performance: 82 },
-    { id: 12, name: "Olivia King", role: "Email Marketing Specialist", email: "olivia.k@orgpath.com", phone: "+1 (555) 234-5690", status: "Active", joinDate: "2024-02-20", performance: 88 },
-    { id: 13, name: "Nathan Wright", role: "Video Producer", email: "nathan.w@orgpath.com", phone: "+1 (555) 234-5691", status: "Active", joinDate: "2024-03-12", performance: 85 },
-    { id: 14, name: "Emma Lopez", role: "PR Specialist", email: "emma.l@orgpath.com", phone: "+1 (555) 234-5692", status: "Active", joinDate: "2024-04-08", performance: 87 },
-    { id: 15, name: "Daniel Harris", role: "Marketing Assistant", email: "daniel.h@orgpath.com", phone: "+1 (555) 234-5693", status: "Active", joinDate: "2024-05-01", performance: 81 },
-  ];
 
   // Team Performance Metrics
   const teamMetrics = {
@@ -117,8 +121,8 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
     avgCommunicationScore: 87,
     avgAdaptabilityScore: 85,
     avgCollaborationScore: 84,
-    completionRate: 100, // 15/15 members completed assessments
-    topPerformers: ["Sophie Martin", "Lucas Anderson", "Jessica Hill"],
+    completionRate: 100,
+    topPerformers: ["Arthur Gabster"],
     benchmarkLeadershipScore: 90,
     benchmarkCommunicationScore: 92,
     benchmarkAdaptabilityScore: 88,
@@ -132,13 +136,19 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
     { name: "Content Marketing Initiative", status: "Planning", completion: 30, assignedTo: ["Alex Turner", "Tyler Moore", "Emma Lopez"], deadline: "2025-12-20" },
   ];
 
-  // Filter team members based on search
-  const filteredMembers = teamMembers.filter(
-    (member) =>
-      member.name.toLowerCase().includes(memberSearch.toLowerCase()) ||
-      member.role.toLowerCase().includes(memberSearch.toLowerCase()) ||
-      member.email.toLowerCase().includes(memberSearch.toLowerCase())
-  );
+  const colors = ["#106BB0", "#06A119", "#1B8784", "#1C986B", "#1C897E"];
+
+  // Filter team members based on search safely
+  const filteredMembers = members.filter((member) => {
+    if (!member) return false;
+    const fullName = `${member.first_name || ''} ${member.last_name || ''}`.toLowerCase();
+    const search = memberSearch.toLowerCase();
+    return (
+      fullName.includes(search) ||
+      (member.title || '').toLowerCase().includes(search) ||
+      (member.email || '').toLowerCase().includes(search)
+    );
+  });
 
   return (
     <>
@@ -266,7 +276,7 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
                 <div className="flex flex-col items-start">
                   {/* DYNAMIC USER NAME */}
                   <span className="text-sm font-medium text-gray-900">
-                    {user ? `${user.first_name} ${user.last_name || ''}` : teamInfo.teamLead}
+                    {teamInfo.teamLead}
                   </span>
                   <span className="text-xs text-gray-500">{teamInfo.leadRole}</span>
                 </div>
@@ -311,7 +321,7 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
                   <CardHeader className="pb-3">
                     <CardDescription>Team Size</CardDescription>
                     <CardTitle className="text-3xl" style={{ color: teamInfo.color }}>
-                      {dashboardData?.teamSize || teamInfo.memberCount}
+                      {dashboardData?.teamSize || members.length || 0}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -500,8 +510,7 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      {(dashboardData?.topPerformers ? dashboardData.topPerformers.map((p:any) => p.name) : teamMetrics.topPerformers).map((name: string, idx: number) => {
-                        const member = teamMembers.find((m) => m.name === name);
+                      {(dashboardData?.topPerformers || [{name: "Arthur Gabster", role: "Manager", initials: "AG"}]).map((perf: any, idx: number) => {
                         return (
                           <div
                             key={idx}
@@ -518,12 +527,12 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
                                 className="text-white"
                                 style={{ backgroundColor: teamInfo.color }}
                               >
-                                {name.split(" ").map((n) => n[0]).join("")}
+                                {perf.initials || perf.name.split(" ").map((n:string) => n[0]).join("")}
                               </AvatarFallback>
                             </Avatar>
                             <div>
-                              <p className="font-semibold text-gray-900">{name}</p>
-                              <p className="text-sm text-gray-600">{member?.role || "Team Member"}</p>
+                              <p className="font-semibold text-gray-900">{perf.name}</p>
+                              <p className="text-sm text-gray-600">{perf.role || "Team Member"}</p>
                             </div>
                             <div className="ml-auto">
                               <Award className="w-5 h-5" style={{ color: teamInfo.color }} />
@@ -588,17 +597,13 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
             </div>
           )}
 
-          {/* ========================================================================= */}
-          {/* THE SECTIONS BELOW (TEAM MEMBERS & PERFORMANCE) ARE UNTOUCHED AND INTACT! */}
-          {/* ========================================================================= */}
-
           {activeNav === "team-members" && (
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900">Team Members</h2>
                   <p className="text-gray-600 mt-1">
-                    Manage your team of {teamInfo.memberCount} members
+                    Manage your team of {members.length} members
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
@@ -614,77 +619,91 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
                 </div>
               </div>
 
-              {/* Team Members Grid */}
+              {/* Team Members Grid - NOW DRIVEN BY REAL DATABASE */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredMembers.map((member) => (
-                  <Card key={member.id} className="border-2 hover:shadow-lg transition-shadow flex flex-col h-full">
-                    <CardHeader className="pb-3">
-                      <div className="flex items-start gap-4">
-                        <Avatar className="w-14 h-14">
-                          <AvatarFallback
-                            className="text-white text-lg"
-                            style={{ backgroundColor: teamInfo.color }}
-                          >
-                            {member.name
-                              .split(" ")
-                              .map((n) => n[0])
-                              .join("")}
-                          </AvatarFallback>
-                        </Avatar>
-                        <div className="flex-1">
-                          <CardTitle className="text-lg">{member.name}</CardTitle>
-                          <CardDescription className="mt-1 line-clamp-2 min-h-[2.5rem]">{member.role}</CardDescription>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-3 flex-1 flex flex-col">
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Mail className="w-4 h-4" />
-                          <span className="truncate">{member.email}</span>
-                        </div>
-                      </div>
+                {loadingMembers ? (
+                  <div className="col-span-full text-center py-12 text-gray-500">Loading real team members...</div>
+                ) : filteredMembers.length === 0 ? (
+                  <div className="col-span-full text-center py-12 text-gray-500">No team members found.</div>
+                ) : (
+                  filteredMembers.map((member, idx) => {
+                    const memberColor = colors[idx % colors.length];
+                    
+                    // Simple helper to convert text rating to a percentage for the bar
+                    let perfScore = 85;
+                    const ratingStr = (member.performance_rating || "").toLowerCase();
+                    if (ratingStr.includes("exceed")) perfScore = 95;
+                    else if (ratingStr.includes("meet")) perfScore = 85;
+                    else if (ratingStr.includes("develop") || ratingStr.includes("need")) perfScore = 70;
 
-                      <div className="pt-3 border-t border-gray-200 mt-auto">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-gray-700">Performance</span>
-                          <span className="text-sm font-semibold" style={{ color: teamInfo.color }}>
-                            {member.performance}%
-                          </span>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div
-                            className="h-2 rounded-full transition-all"
-                            style={{
-                              width: `${member.performance}%`,
-                              backgroundColor: teamInfo.color,
-                            }}
-                          />
-                        </div>
-                      </div>
+                    return (
+                      <Card key={member.id} className="border-2 hover:shadow-lg transition-shadow flex flex-col h-full">
+                        <CardHeader className="pb-3">
+                          <div className="flex items-start gap-4">
+                            <Avatar className="w-14 h-14">
+                              <AvatarFallback
+                                className="text-white text-lg"
+                                style={{ backgroundColor: memberColor }}
+                              >
+                                {(member.first_name || 'E').charAt(0)}{(member.last_name || '').charAt(0)}
+                              </AvatarFallback>
+                            </Avatar>
+                            <div className="flex-1">
+                              <CardTitle className="text-lg">{member.first_name} {member.last_name}</CardTitle>
+                              <CardDescription className="mt-1 line-clamp-2 min-h-[2.5rem]">{member.title || "Team Member"}</CardDescription>
+                            </div>
+                          </div>
+                        </CardHeader>
+                        <CardContent className="space-y-3 flex-1 flex flex-col">
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2 text-sm text-gray-600">
+                              <Mail className="w-4 h-4" />
+                              <span className="truncate">{member.email}</span>
+                            </div>
+                          </div>
 
-                      <div className="flex flex-col gap-2 pt-2">
-                        <Button
-                          variant="outline"
-                          className="w-full"
-                          style={{ borderColor: teamInfo.color, color: teamInfo.color }}
-                          onClick={() => setSelectedMemberDetail(member.id)}
-                        >
-                          <Eye className="w-4 h-4 mr-2" />
-                          View Details
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          className="w-full text-xs text-gray-500 hover:text-gray-900 h-8"
-                          onClick={() => console.log(`Downloading report for ${member.name}`)}
-                        >
-                          <Download className="w-3 h-3 mr-2" />
-                          Download Report
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                          <div className="pt-3 border-t border-gray-200 mt-auto">
+                            <div className="flex items-center justify-between mb-2">
+                              <span className="text-sm font-medium text-gray-700">Performance</span>
+                              <span className="text-sm font-semibold" style={{ color: memberColor }}>
+                                {member.performance_rating || "Meets Expectations"}
+                              </span>
+                            </div>
+                            <div className="w-full bg-gray-200 rounded-full h-2">
+                              <div
+                                className="h-2 rounded-full transition-all"
+                                style={{
+                                  width: `${perfScore}%`,
+                                  backgroundColor: memberColor,
+                                }}
+                              />
+                            </div>
+                          </div>
+
+                          <div className="flex flex-col gap-2 pt-2">
+                            <Button
+                              variant="outline"
+                              className="w-full"
+                              style={{ borderColor: memberColor, color: memberColor }}
+                              onClick={() => setSelectedMemberDetail(member.id)}
+                            >
+                              <Eye className="w-4 h-4 mr-2" />
+                              View Details
+                            </Button>
+                            <Button
+                              variant="ghost"
+                              className="w-full text-xs text-gray-500 hover:text-gray-900 h-8"
+                              onClick={() => console.log(`Downloading report for ${member.first_name}`)}
+                            >
+                              <Download className="w-3 h-3 mr-2" />
+                              Download Report
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    );
+                  })
+                )}
               </div>
             </div>
           )}
@@ -1911,7 +1930,7 @@ export function TeamLeadDashboard({ onLogout, teamLeadName = "Michael Chen" }: T
                     </div>
                     <div>
                       <label className="text-sm font-medium text-gray-700">Team Size</label>
-                      <Input value={`${dashboardData?.teamSize || teamInfo.memberCount} members`} className="mt-1" disabled />
+                      <Input value={`${dashboardData?.teamSize || members.length || 0} members`} className="mt-1" disabled />
                     </div>
                   </div>
                 </CardContent>
