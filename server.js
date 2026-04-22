@@ -8,6 +8,7 @@ import dashboardRoutes from "./src/routes/dashboard.js";
 import assessmentRoutes from "./src/routes/assessment.js";
 import teamleadRoutes from "./src/routes/teamlead.js";
 import companyRoutes from "./src/routes/company.js";
+import evaluationRoutes from "./src/routes/evaluation.js"; // <-- NEW IMPORT
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -27,11 +28,11 @@ app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/assessment", assessmentRoutes);
 app.use("/api/teamlead", teamleadRoutes);
 app.use("/api/company", companyRoutes);
+app.use("/api/evaluation", evaluationRoutes); // <-- REGISTER NEW ROUTE
 
 // --- Fetch ALL real employees for the directory ---
 app.get("/api/users", async (req, res) => {
   try {
-    // Only fetch employees (no passwords or sensitive data!)
     const result = await pool.query(`
       SELECT id, first_name, last_name, email, role, department, title, performance_rating 
       FROM users 
@@ -44,7 +45,7 @@ app.get("/api/users", async (req, res) => {
   }
 });
 
-// --- NEW ROUTE: Fetch a single user by ID for the Member Detail View ---
+// --- Fetch a single user by ID for the Member Detail View ---
 app.get("/api/users/:id", async (req, res) => {
   try {
     const result = await pool.query(

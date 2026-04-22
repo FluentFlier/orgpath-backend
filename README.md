@@ -1,31 +1,8 @@
+# 🧱 OrgPath - Succession & Organizational Effectiveness Platform
 
-# 🧱 OrgPath Backend
+OrgPath is a full-stack, AI-driven web application designed to support structured promotion planning, talent mapping, and organizational analytics. 
 
-OrgPath is an AI-driven **succession and organizational effectiveness** platform.  
-This backend powers authentication, assessment data collection, and analytics APIs — built for **Akamai Connected Cloud (Linode)** and designed for global scalability with **Akamai EdgeWorkers**.
-
----
-
-## 🌐 Architecture Overview
-
-Browser (Frontend)
-│
-├── Akamai Edge CDN
-│    ├─ Serves static frontend (Object Storage)
-│    ├─ Validates JWT via EdgeWorker
-│    └─ Routes /api/* to Linode API origin
-│
-└── Linode Backend (Docker/Kubernetes)
-├─ Node.js (Express API)
-│   ├─ /auth        → registration & login
-│   ├─ /assessment  → data collection
-│   ├─ /dashboard   → analytics dashboard
-│   └─ /algorithms  → future ML modules
-├─ PostgreSQL (Managed on Linode)
-├─ Object Storage (S3-compatible)
-└─ Future: ML microservices for org analytics
-
-````
+This repository contains both the **React Frontend** and the **Node.js/PostgreSQL Backend**.
 
 ---
 
@@ -33,206 +10,91 @@ Browser (Frontend)
 
 | Component | Technology |
 |------------|-------------|
-| Runtime | Node.js 20+ |
-| Framework | Express.js |
-| Database | PostgreSQL |
-| Containerization | Docker & Docker Compose |
-| Hosting | Akamai Connected Cloud (Linode) |
-| Auth | JWT (validated via Akamai EdgeWorkers) |
-| Future | Linode Kubernetes Engine (LKE) |
+| **Frontend UI** | React, Vite, Tailwind CSS, Shadcn UI, Recharts |
+| **Backend API** | Node.js (v20+), Express.js |
+| **Database** | PostgreSQL |
+| **Containerization** | Docker & Docker Compose |
+| **Authentication** | JWT & bcrypt |
 
 ---
 
 ## 🚀 Quick Start (Local Development)
 
+This guide will walk you through starting both the backend API and the frontend UI on your local machine.
+
 ### **1️⃣ Prerequisites**
-- Install **Docker Desktop** (Mac/Windows/Linux)
-- Ensure ports **8080** (API) and **5433** (DB) are available  
-  > Note: we use port `5433` on host to avoid conflict with local PostgreSQL.
+* Install **[Docker Desktop](https://www.docker.com/products/docker-desktop/)** (Must be open and running in the background)
+* Install **[Node.js](https://nodejs.org/en)** (Version 18 or higher)
+* Ensure ports **8080** (Backend API), **5432** (Database), and **5173** (Frontend) are available.
 
 ---
 
-### **2️⃣ Clone & Setup**
+### **2️⃣ Clone the Repository**
+Open your terminal and run:
 ```bash
-git clone https://github.com/fluentflier/orgpath-backend.git
+git clone [https://github.com/fluentflier/orgpath-backend.git](https://github.com/fluentflier/orgpath-backend.git)
 cd orgpath-backend
-cp .env.example .env
-````
 
-Edit `.env` as needed:
+3️⃣ Start the Backend & Database (Docker)
+The backend and database run entirely inside Docker containers, so no local database installation is required.
 
-```env
-PORT=8080
-DATABASE_URL=postgres://orgpath:orgpath@db:5432/orgpath
-JWT_SECRET=change-this-secret
-ALLOWED_ORIGIN=http://localhost:3000
-```
-
----
-
-### **3️⃣ Run with Docker Compose**
-
-```bash
-docker-compose up --build
-```
-
-This will:
-
-* Start a PostgreSQL 15 container
-* Build and start the Node.js API
-* Run DB migrations from `db/init.sql`
-
-You’ll see:
-
-```
-✅ OrgPath backend running on port 8080
-```
-
-Check it:
-
-```
-curl http://localhost:8080
-# → "OrgPath API is running 🚀"
-```
-
----
-
-### **4️⃣ Test API Endpoints**
-
-#### Register a user
-
-```bash
-curl -X POST http://localhost:8080/api/auth/register \
--H "Content-Type: application/json" \
--d '{"username":"anirudh","email":"a@b.com","password":"secret"}'
-```
-
-#### Login
-
-```bash
-curl -X POST http://localhost:8080/api/auth/login \
--H "Content-Type: application/json" \
--d '{"email":"a@b.com","password":"secret"}'
-```
-
-Response:
-
-```json
-{
-  "token": "eyJhbGciOiJIUzI1NiIs...",
-  "user": { "id": 1, "username": "anirudh", "email": "a@b.com" }
-}
-```
-
-Use this JWT token in `Authorization: Bearer <token>` for subsequent requests.
-
----
-
-## 🧠 Database Commands
-
-To enter the database shell:
-
-```bash
-docker exec -it orgpath-backend-db-1 psql -U orgpath -d orgpath
-```
-
-List tables:
-
-```
-\dt
-```
-
----
-
-## ⚠️ Troubleshooting Docker
-
-### 🔹 **Port already allocated (5432)**
-
-If you see:
-
-```
-Bind for 0.0.0.0:5432 failed: port is already allocated
-```
-
-It means your Mac already has Postgres running.
-
-Fix by editing `docker-compose.yml`:
-
-```yaml
-ports:
-  - "5433:5432"
-```
-
-Then rebuild:
-
-```bash
+Make sure you are in the root folder (orgpath-backend), then run these exact commands:
+# 1. Stop and remove any old, running containers
 docker-compose down
-docker-compose up --build
-```
 
-### 🔹 **Container not running**
-
-If a container stopped unexpectedly:
-
-```bash
-docker ps -a
-docker logs <container_name>
-```
-
-To restart everything cleanly:
-
-```bash
-docker-compose down
+# 2. Rebuild the images and start the containers in the background
 docker-compose up -d --build
-```
 
----
+# 3. Check the logs to make sure the server connected and started successfully
+docker logs orgpath-api -f
+(You should see ✅ Server running on port 8080 in the logs. Press Ctrl + C to exit the logs).
 
-## 🧱 Database Schema (from `db/init.sql`)
+4️⃣ Start the Frontend UI (Vite)
+Now that the backend is running, open a new terminal tab or window, navigate into the frontend folder, and start the React app:
+# 1. Navigate into the frontend directory
+cd react-frontend
 
-```sql
-CREATE TABLE IF NOT EXISTS users (
-  id SERIAL PRIMARY KEY,
-  username TEXT UNIQUE NOT NULL,
-  email TEXT UNIQUE NOT NULL,
-  password_hash TEXT NOT NULL,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
+# 2. Install the necessary dependencies (First time only)
+npm install
 
-CREATE TABLE IF NOT EXISTS assessments (
-  id SERIAL PRIMARY KEY,
-  user_id INT REFERENCES users(id),
-  responses JSONB,
-  score NUMERIC,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
+# 3. Start the Vite development server
+npm run dev -- --host
 
-CREATE TABLE IF NOT EXISTS dashboards (
-  id SERIAL PRIMARY KEY,
-  user_id INT REFERENCES users(id),
-  data JSONB,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
-```
----
+Your terminal will display a local network link (usually http://localhost:3000). Click that link to open OrgPath in your browser!
 
-## 📈 Future Modules
+🧪 Testing the Deployment
+Once the app is running in your browser, you can log in using the pre-seeded demo accounts:
 
-| Module                 | Description                                      |
-| ---------------------- | ------------------------------------------------ |
-| **Algorithms**         | Predict org effectiveness & succession readiness |
-| **Integrations**       | HRIS / Excel / third-party connectors            |
-| **Analytics**          | Employee, Manager, and Org dashboards            |
-| **Notifications**      | Email/SMS for insights and events                |
-| **EdgeKV Integration** | Store lightweight configs & revoked tokens       |
+Executive Dashboard (9-Box Matrix)
 
----
+Email: arthur@orgpath.io
 
-## 🧑‍💻 Contributors
+Password: test123
 
-| Role             | Name                 |
-| ---------------- | -------------------- |
-| Backend Engineer     | **Anirudh Manjesh**  |
-| Backend Engineers        | **Abdullah Alzoabi** |
+Team Lead Dashboard (Evaluation Wizard)
 
----
+Email: ld@gmail.com
+
+Password: test123
+
+🧠 Database Management
+The database schema and demo users are automatically created on startup via the init.sql file.
+
+If you need to enter the database shell to view or modify data manually:
+
+docker exec -it orgpath-db psql -U orgpath -d orgpath
+
+(Type \dt to list tables, or \q to exit).
+
+⚠️ Troubleshooting
+🔹 Frontend says "Loading Employee Record..." indefinitely
+If the frontend hangs on a loading screen, it means it cannot reach the backend database.
+
+Ensure Docker Desktop is running.
+
+Run docker-compose down followed by docker-compose up -d in the root folder to wake the backend back up.
+
+🔹 Port already allocated (5432)
+If Docker fails to start the database with a port is already allocated error, it means you have a local version of PostgreSQL running on your machine.
+
+Open docker-compose.yml and change the database port mapping from 5432:5432 to 5433:5432.

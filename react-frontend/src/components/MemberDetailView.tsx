@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
-import { X, ArrowLeft, Mail, Download, TrendingUp, Award, Users, Briefcase, Target, ClipboardCheck } from "lucide-react";
+import { 
+  X, ArrowLeft, Mail, Download, TrendingUp, Award, Users, 
+  Briefcase, Target, ClipboardCheck, LayoutGrid, MessageSquareText 
+} from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { SuccessionPlanModal } from "./SuccessionPlanModal";
+import { toast } from "sonner";
 
 interface MemberDetailViewProps {
   memberId: number;
@@ -13,77 +17,58 @@ interface MemberDetailViewProps {
 export function MemberDetailView({ memberId, onClose }: MemberDetailViewProps) {
   const [showSuccessionModal, setShowSuccessionModal] = useState(false);
   const [memberData, setMemberData] = useState<any>(null);
+  const [evaluation, setEvaluation] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchMemberDetails = async () => {
       const token = sessionStorage.getItem("orgpath_token");
       try {
+        // 1. Fetch User Data
         const res = await fetch(`http://localhost:8080/api/users/${memberId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (res.ok) {
           const data = await res.json();
-          
-          // Map the database fields to the UI structure
           setMemberData({
             id: data.id,
             name: `${data.first_name} ${data.last_name || ''}`,
             role: data.title || "Team Member",
             department: data.department || "General",
-            tenure: "2023 to Present", // Mocked until HR data is added
+            tenure: "2023 to Present",
             initials: `${(data.first_name || 'E').charAt(0)}${(data.last_name || '').charAt(0)}`,
             email: data.email,
             phone: "+1 (555) 000-0000",
-            
-            // Status Badges
-            readiness: data.performance_rating?.includes("Exceed") ? "Ready Now" : "Developing",
+            readiness: data.performance_rating?.toString() === '5' || data.performance_rating?.includes("Exceed") ? "Ready Now" : "Developing",
             riskOfLoss: "Low",
             diverseHire: "Yes",
             criticalRole: "Yes",
             performance: data.performance_rating || "Meets Expectations",
             potential: "High Potential",
-            
-            // Mocked Arrays for UI fidelity (would be fetched from a deeper query in prod)
-            rolesInLineFor: [
-              { title: "Senior " + (data.title || "Role"), readiness: "Ready Now" },
-            ],
-            internalExperience: [
-              { title: data.title || "Consultant", department: data.department || "General", years: "(2022-Present)" },
-            ],
-            externalExperience: [
-              { title: "Previous Role", company: "Prior Agency", years: "(2019-2022)" },
-            ],
-            topCapabilities: [
-              "Reasons Critically & Solves Problems",
-              "Manages Risk",
-              "Takes Ownership"
-            ],
+            rolesInLineFor: [{ title: "Senior " + (data.title || "Role"), readiness: "Ready Now" }],
+            internalExperience: [{ title: data.title || "Consultant", department: data.department || "General", years: "(2022-Present)" }],
+            externalExperience: [{ title: "Previous Role", company: "Prior Agency", years: "(2019-2022)" }],
+            topCapabilities: ["Reasons Critically & Solves Problems", "Manages Risk", "Takes Ownership"],
             capabilityScore: 89,
-            feedback: [
-              { from: "Manager", avatar: "M", comment: "Consistently delivers high-quality work." }
-            ],
+            feedback: [{ from: "Manager", avatar: "M", comment: "Consistently delivers high-quality work." }],
             sentimentAnalysis: 95,
             assessmentsCompleted: 1,
-            assessments: [
-              {
-                type: "OrgInsights Assessment",
-                date: new Date().toLocaleDateString(),
-                overall: 85,
-                leadership: 82,
-                communication: 88,
-                adaptability: 84,
-                collaboration: 86,
-              }
-            ],
+            assessments: [{ type: "OrgInsights Assessment", date: new Date().toLocaleDateString(), overall: 85, leadership: 82, communication: 88, adaptability: 84, collaboration: 86 }],
             feedbackSummary: "Strong contributor showing great leadership potential.",
-            performanceHistory: [
-              { year: "FY 2025", rating: data.performance_rating || "Meets Expectations" }
-            ],
-            potentialHistory: [
-              { year: "FY 2025", rating: "High Potential" }
-            ],
+            performanceHistory: [{ year: "FY 2025", rating: data.performance_rating || "Meets Expectations" }],
+            potentialHistory: [{ year: "FY 2025", rating: "High Potential" }],
           });
+        }
+
+        // 2. Fetch the newly saved Manager Evaluation Data
+        const evalRes = await fetch(`http://localhost:8080/api/evaluation/employee/${memberId}`, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        if (evalRes.ok) {
+          const evalData = await evalRes.json();
+          if (!evalData.message || evalData.message !== "No evaluation found") {
+            setEvaluation(evalData);
+          }
         }
       } catch (err) {
         console.error("Failed to load member details:", err);
@@ -95,10 +80,42 @@ export function MemberDetailView({ memberId, onClose }: MemberDetailViewProps) {
     fetchMemberDetails();
   }, [memberId]);
 
+  // --- NATIVE PDF LOGIC (No extra libraries needed!) ---
+  const handleDownloadPDF = () => {
+    toast.success("Opening print dialog. Select 'Save as PDF' to download!");
+    setTimeout(() => {
+      window.print();
+    }, 500);
+  };
+
+  const getNineBoxPosition = (perf: number, pot: string) => {
+    if (pot === "High Potential (HIPO)") {
+      if (perf >= 5) return "Consistent Star";
+      if (perf >= 3) return "Future Star";
+      return "Rough Diamond";
+    } else if (pot === "Expandable Potential") {
+      if (perf >= 5) return "Current Star";
+      if (perf >= 3) return "Key Player";
+      return "Inconsistent";
+    } else {
+      if (perf >= 5) return "High Professional";
+      if (perf >= 3) return "Effective";
+      return "Underperformer";
+    }
+  };
+
+  const getPerformanceText = (val: number) => {
+    if (val === 5) return "Exceeds Expectations";
+    if (val === 4) return "Strong Performer";
+    if (val === 3) return "Meets Expectations";
+    if (val === 2) return "Developing / Inconsistent";
+    return "Needs Improvement";
+  };
+
   if (loading) {
     return (
       <div className="fixed inset-0 bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-sm z-50 flex items-center justify-center">
-        <div className="text-white text-xl">Loading Employee Record...</div>
+        <div className="text-white text-xl font-bold tracking-widest uppercase">Loading Employee Record...</div>
       </div>
     );
   }
@@ -106,40 +123,32 @@ export function MemberDetailView({ memberId, onClose }: MemberDetailViewProps) {
   if (!memberData) return null;
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-sm z-50 overflow-y-auto animate-in fade-in duration-300">
-      <div className="min-h-screen p-6">
+    <div className="fixed inset-0 bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-sm z-50 overflow-y-auto animate-in fade-in duration-300 print:bg-white print:static print:block">
+      <div className="min-h-screen p-6 print:p-0">
         <div className="max-w-7xl mx-auto">
-          {/* Header with Close Button */}
-          <div className="flex items-center justify-between mb-6 animate-in slide-in-from-top duration-500">
+          
+          {/* Header with Close Button (Hidden when printing) */}
+          <div className="flex items-center justify-between mb-6 animate-in slide-in-from-top duration-500 print:hidden">
             <div className="flex gap-3">
-              <Button
-                variant="outline"
-                onClick={onClose}
-                className="bg-white hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Team Members
+              <Button variant="outline" onClick={onClose} className="bg-white hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg">
+                <ArrowLeft className="w-4 h-4 mr-2" /> Back to Team Members
               </Button>
-              <Button
-                variant="outline"
+              <Button 
+                variant="outline" 
+                onClick={handleDownloadPDF}
                 className="bg-white border-blue-200 text-[#106BB0] hover:bg-blue-50 transition-all duration-300 hover:scale-105 shadow-lg"
-                onClick={() => console.log("Downloading detailed report...")}
               >
-                <Download className="w-4 h-4 mr-2" />
-                Download Performance Report
+                <Download className="w-4 h-4 mr-2" /> Download Performance Report
               </Button>
             </div>
-            <Button
-              variant="ghost"
-              onClick={onClose}
-              className="bg-white hover:bg-red-50 hover:text-red-600 transition-all duration-300 hover:scale-105 shadow-lg"
-            >
+            <Button variant="ghost" onClick={onClose} className="bg-white hover:bg-red-50 hover:text-red-600 transition-all duration-300 hover:scale-105 shadow-lg">
               <X className="w-5 h-5" />
             </Button>
           </div>
 
-          {/* Main Content */}
-          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom duration-700">
+          {/* MAIN CONTENT TO BE CAPTURED AS PDF */}
+          <div id="pdf-report-container" className="bg-white rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom duration-700 print:shadow-none print:rounded-none">
+            
             {/* Profile Header Section */}
             <div className="bg-gradient-to-br from-[#106BB0]/5 via-[#F8FAFC] to-[#06A119]/5 p-8 relative overflow-hidden border-b border-slate-200/60">
               <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6">
@@ -182,7 +191,7 @@ export function MemberDetailView({ memberId, onClose }: MemberDetailViewProps) {
                 </div>
                 <div className="bg-white rounded-xl p-4 text-center border border-slate-200 hover:border-[#106BB0]/30 hover:shadow-md hover:scale-105 transition-all duration-300 group">
                   <div className="text-[10px] font-bold mb-1 text-slate-400 uppercase tracking-widest">Risk of Loss</div>
-                  <div className="text-sm font-bold text-slate-900 group-hover:scale-110 transition-transform duration-300">{memberData.riskOfLoss}</div>
+                  <div className="text-sm font-bold text-slate-900 group-hover:scale-110 transition-transform duration-300">{evaluation?.flight_risk || memberData.riskOfLoss}</div>
                 </div>
                 <div className="bg-white rounded-xl p-4 text-center border border-slate-200 hover:border-[#106BB0]/30 hover:shadow-md hover:scale-105 transition-all duration-300 group">
                   <div className="text-[10px] font-bold mb-1 text-slate-400 uppercase tracking-widest">Diverse Hire</div>
@@ -194,17 +203,73 @@ export function MemberDetailView({ memberId, onClose }: MemberDetailViewProps) {
                 </div>
                 <div className="bg-white rounded-xl p-4 text-center border border-slate-200 hover:border-[#106BB0]/30 hover:shadow-md hover:scale-105 transition-all duration-300 group">
                   <div className="text-[10px] font-bold mb-1 text-slate-400 uppercase tracking-widest">Performance</div>
-                  <div className="text-sm font-bold text-slate-900 group-hover:scale-110 transition-transform duration-300 truncate">{memberData.performance}</div>
+                  <div className="text-sm font-bold text-slate-900 group-hover:scale-110 transition-transform duration-300 truncate">
+                    {evaluation ? getPerformanceText(evaluation.performance_rating) : memberData.performance}
+                  </div>
                 </div>
                 <div className="bg-white rounded-xl p-4 text-center border border-slate-200 hover:border-[#106BB0]/30 hover:shadow-md hover:scale-105 transition-all duration-300 group">
                   <div className="text-[10px] font-bold mb-1 text-slate-400 uppercase tracking-widest">Potential</div>
-                  <div className="text-sm font-bold text-slate-900 group-hover:scale-110 transition-transform duration-300">{memberData.potential}</div>
+                  <div className="text-sm font-bold text-slate-900 group-hover:scale-110 transition-transform duration-300 truncate">
+                    {evaluation?.potential_category || memberData.potential}
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Main Grid Layout */}
             <div className="p-8">
+              
+              {/* MANAGER EVALUATION DISPLAY */}
+              {evaluation && (
+                <div className="mb-8 space-y-6">
+                  <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4">
+                    <LayoutGrid className="w-6 h-6 text-[#9333ea]" />
+                    Latest Manager Evaluation
+                  </h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* 9-Box Placement */}
+                    <Card className="border-2 border-purple-200 bg-purple-50/50 shadow-sm md:col-span-2">
+                      <CardContent className="p-6 flex flex-col justify-center h-full">
+                        <div className="text-xs font-black uppercase tracking-widest text-purple-600 mb-2">Talent Matrix Position</div>
+                        <div className="text-4xl font-black text-slate-900 italic uppercase">
+                          {getNineBoxPosition(evaluation.performance_rating, evaluation.potential_category)}
+                        </div>
+                      </CardContent>
+                    </Card>
+
+                    {/* Risk Analysis */}
+                    <Card className="border-2 border-amber-200 bg-amber-50/50 shadow-sm">
+                      <CardContent className="p-6 space-y-4">
+                        <div>
+                          <div className="text-[10px] font-black uppercase tracking-widest text-amber-600 mb-1">Flight Risk</div>
+                          <div className="text-xl font-black text-slate-900">{evaluation.flight_risk}</div>
+                        </div>
+                        <div className="w-full h-px bg-amber-200"></div>
+                        <div>
+                          <div className="text-[10px] font-black uppercase tracking-widest text-amber-600 mb-1">Impact of Loss</div>
+                          <div className="text-xl font-black text-slate-900">{evaluation.impact_of_loss}</div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+
+                  {/* Final Notes */}
+                  {evaluation.final_notes && (
+                    <Card className="border-2 border-slate-200 shadow-sm">
+                      <CardContent className="p-6">
+                        <div className="text-xs font-black uppercase tracking-widest text-slate-500 mb-3 flex items-center gap-2">
+                          <MessageSquareText className="w-4 h-4" /> Manager's Narrative Feedback
+                        </div>
+                        <p className="text-slate-800 whitespace-pre-wrap font-medium leading-relaxed">
+                          {evaluation.final_notes}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  )}
+                </div>
+              )}
+
               {/* Detailed Assessments Section */}
               <div className="mb-8 space-y-6 bg-gradient-to-br from-[#106BB0]/5 to-[#06A119]/5 p-6 rounded-2xl border border-slate-200/60 shadow-sm">
                 <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4">
@@ -292,7 +357,7 @@ export function MemberDetailView({ memberId, onClose }: MemberDetailViewProps) {
                         >
                           <span className="font-bold text-gray-800">{role.title}</span>
                           <span 
-                            className="bg-[#06A119]/10 text-[#06A119] border border-[#06A119]/20 px-6 py-2 rounded-lg font-bold shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 cursor-pointer"
+                            className="bg-[#06A119]/10 text-[#06A119] border border-[#06A119]/20 px-6 py-2 rounded-lg font-bold shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 cursor-pointer print:border-none"
                             onClick={() => role.readiness === "Ready Now" && setShowSuccessionModal(true)}
                           >
                             {role.readiness}
@@ -451,7 +516,7 @@ export function MemberDetailView({ memberId, onClose }: MemberDetailViewProps) {
                         {memberData.performanceHistory.map((item: any, idx: number) => (
                           <div key={idx} className="flex items-center justify-between hover:bg-gray-50 p-3 rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02]">
                             <span className="font-bold text-gray-900">{item.year}</span>
-                            <span className="bg-[#06A119]/10 text-[#06A119] border border-[#06A119]/20 px-6 py-2 rounded-lg font-bold shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105">
+                            <span className="bg-[#06A119]/10 text-[#06A119] border border-[#06A119]/20 px-6 py-2 rounded-lg font-bold shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 print:border-none">
                               {item.rating}
                             </span>
                           </div>
@@ -473,7 +538,7 @@ export function MemberDetailView({ memberId, onClose }: MemberDetailViewProps) {
                           {memberData.potentialHistory.map((item: any, idx: number) => (
                             <div key={idx} className="flex items-center justify-between hover:bg-gray-50 p-3 rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02]">
                               <span className="font-bold text-gray-900">{item.year}</span>
-                              <span className="bg-[#106BB0]/10 text-[#106BB0] border border-[#106BB0]/20 px-6 py-2 rounded-lg font-bold shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105">
+                              <span className="bg-[#106BB0]/10 text-[#106BB0] border border-[#106BB0]/20 px-6 py-2 rounded-lg font-bold shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 print:border-none">
                                 {item.rating}
                               </span>
                             </div>
